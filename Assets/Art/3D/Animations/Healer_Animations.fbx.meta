@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: b8ac2484b36bb004fa1cddc739898a09
+timeCreated: 1487454330
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm
+    100002: Back001
+    100004: Belly001
+    100006: Head001
+    100008: //RootNode
+    100010: Robot_Rig_Fully_Rigged:Chest_Control
+    100012: Robot_Rig_Fully_Rigged:God_Node
+    100014: Robot_Rig_Fully_Rigged:Head_Control
+    100016: Robot_Rig_Fully_Rigged:Head_Joint
+    100018: Robot_Rig_Fully_Rigged:Head_NOBIND
+    100020: Robot_Rig_Fully_Rigged:Hip_Control
+    100022: Robot_Rig_Fully_Rigged:Hips_Joint
+    100024: Robot_Rig_Fully_Rigged:L_Elbow_Joint
+    100026: Robot_Rig_Fully_Rigged:L_Elbow_Joint1
+    100028: Robot_Rig_Fully_Rigged:L_Foot_Joint
+    100030: Robot_Rig_Fully_Rigged:L_Index1
+    100032: Robot_Rig_Fully_Rigged:L_Index2
+    100034: Robot_Rig_Fully_Rigged:L_Index3
+    100036: Robot_Rig_Fully_Rigged:L_Index4
+    100038: Robot_Rig_Fully_Rigged:L_Index5
+    100040: Robot_Rig_Fully_Rigged:L_Index6
+    100042: Robot_Rig_Fully_Rigged:L_Knee_Joint
+    100044: Robot_Rig_Fully_Rigged:L_Middle1
+    100046: Robot_Rig_Fully_Rigged:L_Middle2
+    100048: Robot_Rig_Fully_Rigged:L_Middle3
+    100050: Robot_Rig_Fully_Rigged:L_Middle4
+    100052: Robot_Rig_Fully_Rigged:L_Middle_NOBIND
+    100054: Robot_Rig_Fully_Rigged:L_Middle_NOBIND1
+    100056: Robot_Rig_Fully_Rigged:L_Ring1
+    100058: Robot_Rig_Fully_Rigged:L_Ring2
+    100060: Robot_Rig_Fully_Rigged:L_Ring3
+    100062: Robot_Rig_Fully_Rigged:L_Ring4
+    100064: Robot_Rig_Fully_Rigged:L_Ring_NOBIND
+    100066: Robot_Rig_Fully_Rigged:L_Ring_NOBIND1
+    100068: Robot_Rig_Fully_Rigged:L_Shoulder2_Joint
+    100070: Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1
+    100072: Robot_Rig_Fully_Rigged:L_Shoulder_Control
+    100074: Robot_Rig_Fully_Rigged:L_Shoulder_Joint
+    100076: Robot_Rig_Fully_Rigged:L_Shoulder_Joint1
+    100078: Robot_Rig_Fully_Rigged:L_Thumb1
+    100080: Robot_Rig_Fully_Rigged:L_Thumb2
+    100082: Robot_Rig_Fully_Rigged:L_Thumb3
+    100084: Robot_Rig_Fully_Rigged:L_Thumb4
+    100086: Robot_Rig_Fully_Rigged:L_Thumb_NOBIND
+    100088: Robot_Rig_Fully_Rigged:L_Thumb_NOBIND1
+    100090: Robot_Rig_Fully_Rigged:L_Toe_Joint
+    100092: Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint
+    100094: Robot_Rig_Fully_Rigged:L_Wrist_Control
+    100096: Robot_Rig_Fully_Rigged:L_Wrist_Joint
+    100098: Robot_Rig_Fully_Rigged:L_Wrist_Joint1
+    100100: Robot_Rig_Fully_Rigged:Neck_Joint
+    100102: Robot_Rig_Fully_Rigged:Object001
+    100104: Robot_Rig_Fully_Rigged:R_Foot_Joint
+    100106: Robot_Rig_Fully_Rigged:R_Knee_Joint
+    100108: Robot_Rig_Fully_Rigged:R_Toe_Joint
+    100110: Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint
+    100112: Robot_Rig_Fully_Rigged:Root_Joint
+    100114: Robot_Rig_Fully_Rigged:Spine_Joint
+    100116: Robot_Rig_Fully_Rigged:Toe_NOBIND
+    100118: Robot_Rig_Fully_Rigged:Toe_NOBIND 1
+    100120: Robot_Rig_Fully_Rigged:Waist_Control
+    400000: Arm
+    400002: Back001
+    400004: Belly001
+    400006: Head001
+    400008: //RootNode
+    400010: Robot_Rig_Fully_Rigged:Chest_Control
+    400012: Robot_Rig_Fully_Rigged:God_Node
+    400014: Robot_Rig_Fully_Rigged:Head_Control
+    400016: Robot_Rig_Fully_Rigged:Head_Joint
+    400018: Robot_Rig_Fully_Rigged:Head_NOBIND
+    400020: Robot_Rig_Fully_Rigged:Hip_Control
+    400022: Robot_Rig_Fully_Rigged:Hips_Joint
+    400024: Robot_Rig_Fully_Rigged:L_Elbow_Joint
+    400026: Robot_Rig_Fully_Rigged:L_Elbow_Joint1
+    400028: Robot_Rig_Fully_Rigged:L_Foot_Joint
+    400030: Robot_Rig_Fully_Rigged:L_Index1
+    400032: Robot_Rig_Fully_Rigged:L_Index2
+    400034: Robot_Rig_Fully_Rigged:L_Index3
+    400036: Robot_Rig_Fully_Rigged:L_Index4
+    400038: Robot_Rig_Fully_Rigged:L_Index5
+    400040: Robot_Rig_Fully_Rigged:L_Index6
+    400042: Robot_Rig_Fully_Rigged:L_Knee_Joint
+    400044: Robot_Rig_Fully_Rigged:L_Middle1
+    400046: Robot_Rig_Fully_Rigged:L_Middle2
+    400048: Robot_Rig_Fully_Rigged:L_Middle3
+    400050: Robot_Rig_Fully_Rigged:L_Middle4
+    400052: Robot_Rig_Fully_Rigged:L_Middle_NOBIND
+    400054: Robot_Rig_Fully_Rigged:L_Middle_NOBIND1
+    400056: Robot_Rig_Fully_Rigged:L_Ring1
+    400058: Robot_Rig_Fully_Rigged:L_Ring2
+    400060: Robot_Rig_Fully_Rigged:L_Ring3
+    400062: Robot_Rig_Fully_Rigged:L_Ring4
+    400064: Robot_Rig_Fully_Rigged:L_Ring_NOBIND
+    400066: Robot_Rig_Fully_Rigged:L_Ring_NOBIND1
+    400068: Robot_Rig_Fully_Rigged:L_Shoulder2_Joint
+    400070: Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1
+    400072: Robot_Rig_Fully_Rigged:L_Shoulder_Control
+    400074: Robot_Rig_Fully_Rigged:L_Shoulder_Joint
+    400076: Robot_Rig_Fully_Rigged:L_Shoulder_Joint1
+    400078: Robot_Rig_Fully_Rigged:L_Thumb1
+    400080: Robot_Rig_Fully_Rigged:L_Thumb2
+    400082: Robot_Rig_Fully_Rigged:L_Thumb3
+    400084: Robot_Rig_Fully_Rigged:L_Thumb4
+    400086: Robot_Rig_Fully_Rigged:L_Thumb_NOBIND
+    400088: Robot_Rig_Fully_Rigged:L_Thumb_NOBIND1
+    400090: Robot_Rig_Fully_Rigged:L_Toe_Joint
+    400092: Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint
+    400094: Robot_Rig_Fully_Rigged:L_Wrist_Control
+    400096: Robot_Rig_Fully_Rigged:L_Wrist_Joint
+    400098: Robot_Rig_Fully_Rigged:L_Wrist_Joint1
+    400100: Robot_Rig_Fully_Rigged:Neck_Joint
+    400102: Robot_Rig_Fully_Rigged:Object001
+    400104: Robot_Rig_Fully_Rigged:R_Foot_Joint
+    400106: Robot_Rig_Fully_Rigged:R_Knee_Joint
+    400108: Robot_Rig_Fully_Rigged:R_Toe_Joint
+    400110: Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint
+    400112: Robot_Rig_Fully_Rigged:Root_Joint
+    400114: Robot_Rig_Fully_Rigged:Spine_Joint
+    400116: Robot_Rig_Fully_Rigged:Toe_NOBIND
+    400118: Robot_Rig_Fully_Rigged:Toe_NOBIND 1
+    400120: Robot_Rig_Fully_Rigged:Waist_Control
+    2300000: Arm
+    2300002: Back001
+    2300004: Belly001
+    2300006: Head001
+    3300000: Arm
+    3300002: Back001
+    3300004: Belly001
+    3300006: Head001
+    4300000: Robot_Rig_Fully_Rigged:Object001
+    4300002: Arm
+    4300004: Head001
+    4300006: Belly001
+    4300008: Back001
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Robot_Rig_Fully_Rigged:Object001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

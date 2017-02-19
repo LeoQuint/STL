@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 1bf4126ac4ffa1d499c31e737bad58e9
+timeCreated: 1487454328
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Enemy_Rig_Final:Cylinder001
+    100004: Enemy_Rig_Final:Head_Joint
+    100006: Enemy_Rig_Final:Head_NOBIND
+    100008: Enemy_Rig_Final:L_Arm_Joint
+    100010: Enemy_Rig_Final:L_Index1_Joint
+    100012: Enemy_Rig_Final:L_Index2_Joint
+    100014: Enemy_Rig_Final:L_Index3_NOBIND
+    100016: Enemy_Rig_Final:L_Middle1_Joint
+    100018: Enemy_Rig_Final:L_Middle2_Joint
+    100020: Enemy_Rig_Final:L_Middle_NOBIND
+    100022: Enemy_Rig_Final:L_Ring1_Joint
+    100024: Enemy_Rig_Final:L_Ring2_Joint
+    100026: Enemy_Rig_Final:L_Ring_NOBIND
+    100028: Enemy_Rig_Final:L_Shoulder1_Joint
+    100030: Enemy_Rig_Final:L_Shoulder2_Joint
+    100032: Enemy_Rig_Final:L_Thumb1_Joint
+    100034: Enemy_Rig_Final:L_Thumb2_Joint
+    100036: Enemy_Rig_Final:L_Thumb_NOBIND
+    100038: Enemy_Rig_Final:L_Wrist_Joint
+    100040: Enemy_Rig_Final:Neck_Joint
+    100042: Enemy_Rig_Final:R_Arm_Joint
+    100044: Enemy_Rig_Final:R_Index1_Joint
+    100046: Enemy_Rig_Final:R_Index2_Joint
+    100048: Enemy_Rig_Final:R_Index3_NOBIND
+    100050: Enemy_Rig_Final:R_Middle1_Joint
+    100052: Enemy_Rig_Final:R_Middle2_Joint
+    100054: Enemy_Rig_Final:R_Middle_NOBIND
+    100056: Enemy_Rig_Final:R_Ring1_Joint
+    100058: Enemy_Rig_Final:R_Ring2_Joint
+    100060: Enemy_Rig_Final:R_Ring_NOBIND
+    100062: Enemy_Rig_Final:R_Shoulder1_Joint
+    100064: Enemy_Rig_Final:R_Shoulder2_Joint
+    100066: Enemy_Rig_Final:R_Thumb1_Joint
+    100068: Enemy_Rig_Final:R_Thumb2_Joint
+    100070: Enemy_Rig_Final:R_Thumb_NOBIND
+    100072: Enemy_Rig_Final:R_Wrist_Joint
+    100074: Enemy_Rig_Final:Root_Joint
+    100076: Enemy_Rig_Final:Spine1_Joint
+    100078: Enemy_Rig_Final:Spine_NOBIND
+    400000: //RootNode
+    400002: Enemy_Rig_Final:Cylinder001
+    400004: Enemy_Rig_Final:Head_Joint
+    400006: Enemy_Rig_Final:Head_NOBIND
+    400008: Enemy_Rig_Final:L_Arm_Joint
+    400010: Enemy_Rig_Final:L_Index1_Joint
+    400012: Enemy_Rig_Final:L_Index2_Joint
+    400014: Enemy_Rig_Final:L_Index3_NOBIND
+    400016: Enemy_Rig_Final:L_Middle1_Joint
+    400018: Enemy_Rig_Final:L_Middle2_Joint
+    400020: Enemy_Rig_Final:L_Middle_NOBIND
+    400022: Enemy_Rig_Final:L_Ring1_Joint
+    400024: Enemy_Rig_Final:L_Ring2_Joint
+    400026: Enemy_Rig_Final:L_Ring_NOBIND
+    400028: Enemy_Rig_Final:L_Shoulder1_Joint
+    400030: Enemy_Rig_Final:L_Shoulder2_Joint
+    400032: Enemy_Rig_Final:L_Thumb1_Joint
+    400034: Enemy_Rig_Final:L_Thumb2_Joint
+    400036: Enemy_Rig_Final:L_Thumb_NOBIND
+    400038: Enemy_Rig_Final:L_Wrist_Joint
+    400040: Enemy_Rig_Final:Neck_Joint
+    400042: Enemy_Rig_Final:R_Arm_Joint
+    400044: Enemy_Rig_Final:R_Index1_Joint
+    400046: Enemy_Rig_Final:R_Index2_Joint
+    400048: Enemy_Rig_Final:R_Index3_NOBIND
+    400050: Enemy_Rig_Final:R_Middle1_Joint
+    400052: Enemy_Rig_Final:R_Middle2_Joint
+    400054: Enemy_Rig_Final:R_Middle_NOBIND
+    400056: Enemy_Rig_Final:R_Ring1_Joint
+    400058: Enemy_Rig_Final:R_Ring2_Joint
+    400060: Enemy_Rig_Final:R_Ring_NOBIND
+    400062: Enemy_Rig_Final:R_Shoulder1_Joint
+    400064: Enemy_Rig_Final:R_Shoulder2_Joint
+    400066: Enemy_Rig_Final:R_Thumb1_Joint
+    400068: Enemy_Rig_Final:R_Thumb2_Joint
+    400070: Enemy_Rig_Final:R_Thumb_NOBIND
+    400072: Enemy_Rig_Final:R_Wrist_Joint
+    400074: Enemy_Rig_Final:Root_Joint
+    400076: Enemy_Rig_Final:Spine1_Joint
+    400078: Enemy_Rig_Final:Spine_NOBIND
+    4300000: Enemy_Rig_Final:Cylinder001
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Enemy_Rig_Final:Cylinder001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
