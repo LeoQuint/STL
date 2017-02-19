@@ -140,7 +140,10 @@ ModelImporter:
     4300004: Head001
     4300006: Belly001
     4300008: Back001
-    7400000: Take 001
+    7400000: run
+    7400002: idle
+    7400004: attack
+    7400006: Take 0012
     9500000: //RootNode
     13700000: Robot_Rig_Fully_Rigged:Object001
   materials:
@@ -163,7 +166,611 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Back001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Belly001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:Head_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:Head_Control/Head001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control/Robot_Rig_Fully_Rigged:L_Wrist_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control/Robot_Rig_Fully_Rigged:L_Wrist_Control/Arm
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint/Robot_Rig_Fully_Rigged:L_Toe_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint/Robot_Rig_Fully_Rigged:L_Toe_Joint/Robot_Rig_Fully_Rigged:Toe_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint/Robot_Rig_Fully_Rigged:R_Toe_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint/Robot_Rig_Fully_Rigged:R_Toe_Joint/Robot_Rig_Fully_Rigged:Toe_NOBIND
+          1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1/Robot_Rig_Fully_Rigged:L_Index2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1/Robot_Rig_Fully_Rigged:L_Index2/Robot_Rig_Fully_Rigged:L_Index3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1/Robot_Rig_Fully_Rigged:L_Middle2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1/Robot_Rig_Fully_Rigged:L_Middle2/Robot_Rig_Fully_Rigged:L_Middle_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1/Robot_Rig_Fully_Rigged:L_Ring2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1/Robot_Rig_Fully_Rigged:L_Ring2/Robot_Rig_Fully_Rigged:L_Ring_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1/Robot_Rig_Fully_Rigged:L_Thumb2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1/Robot_Rig_Fully_Rigged:L_Thumb2/Robot_Rig_Fully_Rigged:L_Thumb_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4/Robot_Rig_Fully_Rigged:L_Index5
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4/Robot_Rig_Fully_Rigged:L_Index5/Robot_Rig_Fully_Rigged:L_Index6
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3/Robot_Rig_Fully_Rigged:L_Middle4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3/Robot_Rig_Fully_Rigged:L_Middle4/Robot_Rig_Fully_Rigged:L_Middle_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3/Robot_Rig_Fully_Rigged:L_Ring4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3/Robot_Rig_Fully_Rigged:L_Ring4/Robot_Rig_Fully_Rigged:L_Ring_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3/Robot_Rig_Fully_Rigged:L_Thumb4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3/Robot_Rig_Fully_Rigged:L_Thumb4/Robot_Rig_Fully_Rigged:L_Thumb_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint/Robot_Rig_Fully_Rigged:Head_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint/Robot_Rig_Fully_Rigged:Head_Joint/Robot_Rig_Fully_Rigged:Head_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Object001
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 26
+      lastFrame: 146
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Back001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Belly001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:Head_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:Head_Control/Head001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control/Robot_Rig_Fully_Rigged:L_Wrist_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control/Robot_Rig_Fully_Rigged:L_Wrist_Control/Arm
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint/Robot_Rig_Fully_Rigged:L_Toe_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint/Robot_Rig_Fully_Rigged:L_Toe_Joint/Robot_Rig_Fully_Rigged:Toe_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint/Robot_Rig_Fully_Rigged:R_Toe_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint/Robot_Rig_Fully_Rigged:R_Toe_Joint/Robot_Rig_Fully_Rigged:Toe_NOBIND
+          1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1/Robot_Rig_Fully_Rigged:L_Index2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1/Robot_Rig_Fully_Rigged:L_Index2/Robot_Rig_Fully_Rigged:L_Index3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1/Robot_Rig_Fully_Rigged:L_Middle2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1/Robot_Rig_Fully_Rigged:L_Middle2/Robot_Rig_Fully_Rigged:L_Middle_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1/Robot_Rig_Fully_Rigged:L_Ring2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1/Robot_Rig_Fully_Rigged:L_Ring2/Robot_Rig_Fully_Rigged:L_Ring_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1/Robot_Rig_Fully_Rigged:L_Thumb2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1/Robot_Rig_Fully_Rigged:L_Thumb2/Robot_Rig_Fully_Rigged:L_Thumb_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4/Robot_Rig_Fully_Rigged:L_Index5
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4/Robot_Rig_Fully_Rigged:L_Index5/Robot_Rig_Fully_Rigged:L_Index6
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3/Robot_Rig_Fully_Rigged:L_Middle4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3/Robot_Rig_Fully_Rigged:L_Middle4/Robot_Rig_Fully_Rigged:L_Middle_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3/Robot_Rig_Fully_Rigged:L_Ring4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3/Robot_Rig_Fully_Rigged:L_Ring4/Robot_Rig_Fully_Rigged:L_Ring_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3/Robot_Rig_Fully_Rigged:L_Thumb4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3/Robot_Rig_Fully_Rigged:L_Thumb4/Robot_Rig_Fully_Rigged:L_Thumb_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint/Robot_Rig_Fully_Rigged:Head_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint/Robot_Rig_Fully_Rigged:Head_Joint/Robot_Rig_Fully_Rigged:Head_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Object001
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack
+      takeName: Take 001
+      firstFrame: 238
+      lastFrame: 270
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Back001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Belly001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:Head_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:Head_Control/Head001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control/Robot_Rig_Fully_Rigged:L_Wrist_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control/Robot_Rig_Fully_Rigged:L_Wrist_Control/Arm
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint/Robot_Rig_Fully_Rigged:L_Toe_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint/Robot_Rig_Fully_Rigged:L_Toe_Joint/Robot_Rig_Fully_Rigged:Toe_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint/Robot_Rig_Fully_Rigged:R_Toe_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint/Robot_Rig_Fully_Rigged:R_Toe_Joint/Robot_Rig_Fully_Rigged:Toe_NOBIND
+          1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1/Robot_Rig_Fully_Rigged:L_Index2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1/Robot_Rig_Fully_Rigged:L_Index2/Robot_Rig_Fully_Rigged:L_Index3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1/Robot_Rig_Fully_Rigged:L_Middle2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1/Robot_Rig_Fully_Rigged:L_Middle2/Robot_Rig_Fully_Rigged:L_Middle_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1/Robot_Rig_Fully_Rigged:L_Ring2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1/Robot_Rig_Fully_Rigged:L_Ring2/Robot_Rig_Fully_Rigged:L_Ring_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1/Robot_Rig_Fully_Rigged:L_Thumb2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1/Robot_Rig_Fully_Rigged:L_Thumb2/Robot_Rig_Fully_Rigged:L_Thumb_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4/Robot_Rig_Fully_Rigged:L_Index5
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4/Robot_Rig_Fully_Rigged:L_Index5/Robot_Rig_Fully_Rigged:L_Index6
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3/Robot_Rig_Fully_Rigged:L_Middle4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3/Robot_Rig_Fully_Rigged:L_Middle4/Robot_Rig_Fully_Rigged:L_Middle_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3/Robot_Rig_Fully_Rigged:L_Ring4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3/Robot_Rig_Fully_Rigged:L_Ring4/Robot_Rig_Fully_Rigged:L_Ring_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3/Robot_Rig_Fully_Rigged:L_Thumb4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3/Robot_Rig_Fully_Rigged:L_Thumb4/Robot_Rig_Fully_Rigged:L_Thumb_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint/Robot_Rig_Fully_Rigged:Head_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint/Robot_Rig_Fully_Rigged:Head_Joint/Robot_Rig_Fully_Rigged:Head_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Object001
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Take 0012
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Back001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Belly001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:Head_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:Head_Control/Head001
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control/Robot_Rig_Fully_Rigged:L_Wrist_Control
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:God_Node/Robot_Rig_Fully_Rigged:Hip_Control/Robot_Rig_Fully_Rigged:Waist_Control/Robot_Rig_Fully_Rigged:Chest_Control/Robot_Rig_Fully_Rigged:L_Shoulder_Control/Robot_Rig_Fully_Rigged:L_Wrist_Control/Arm
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint/Robot_Rig_Fully_Rigged:L_Toe_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:L_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:L_Knee_Joint/Robot_Rig_Fully_Rigged:L_Foot_Joint/Robot_Rig_Fully_Rigged:L_Toe_Joint/Robot_Rig_Fully_Rigged:Toe_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint/Robot_Rig_Fully_Rigged:R_Toe_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:R_Upper_Leg_Joint/Robot_Rig_Fully_Rigged:R_Knee_Joint/Robot_Rig_Fully_Rigged:R_Foot_Joint/Robot_Rig_Fully_Rigged:R_Toe_Joint/Robot_Rig_Fully_Rigged:Toe_NOBIND
+          1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1/Robot_Rig_Fully_Rigged:L_Index2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Index1/Robot_Rig_Fully_Rigged:L_Index2/Robot_Rig_Fully_Rigged:L_Index3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1/Robot_Rig_Fully_Rigged:L_Middle2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Middle1/Robot_Rig_Fully_Rigged:L_Middle2/Robot_Rig_Fully_Rigged:L_Middle_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1/Robot_Rig_Fully_Rigged:L_Ring2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Ring1/Robot_Rig_Fully_Rigged:L_Ring2/Robot_Rig_Fully_Rigged:L_Ring_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1/Robot_Rig_Fully_Rigged:L_Thumb2
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint/Robot_Rig_Fully_Rigged:L_Elbow_Joint/Robot_Rig_Fully_Rigged:L_Wrist_Joint/Robot_Rig_Fully_Rigged:L_Thumb1/Robot_Rig_Fully_Rigged:L_Thumb2/Robot_Rig_Fully_Rigged:L_Thumb_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4/Robot_Rig_Fully_Rigged:L_Index5
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Index4/Robot_Rig_Fully_Rigged:L_Index5/Robot_Rig_Fully_Rigged:L_Index6
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3/Robot_Rig_Fully_Rigged:L_Middle4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Middle3/Robot_Rig_Fully_Rigged:L_Middle4/Robot_Rig_Fully_Rigged:L_Middle_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3/Robot_Rig_Fully_Rigged:L_Ring4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Ring3/Robot_Rig_Fully_Rigged:L_Ring4/Robot_Rig_Fully_Rigged:L_Ring_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3/Robot_Rig_Fully_Rigged:L_Thumb4
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:L_Shoulder_Joint1/Robot_Rig_Fully_Rigged:L_Shoulder2_Joint1/Robot_Rig_Fully_Rigged:L_Elbow_Joint1/Robot_Rig_Fully_Rigged:L_Wrist_Joint1/Robot_Rig_Fully_Rigged:L_Thumb3/Robot_Rig_Fully_Rigged:L_Thumb4/Robot_Rig_Fully_Rigged:L_Thumb_NOBIND1
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint/Robot_Rig_Fully_Rigged:Head_Joint
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Hips_Joint/Robot_Rig_Fully_Rigged:Spine_Joint/Robot_Rig_Fully_Rigged:Root_Joint/Robot_Rig_Fully_Rigged:Neck_Joint/Robot_Rig_Fully_Rigged:Head_Joint/Robot_Rig_Fully_Rigged:Head_NOBIND
+        weight: 1
+      - path: Robot_Rig_Fully_Rigged:Object001
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
