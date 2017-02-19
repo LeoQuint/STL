@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     [Tooltip("The prefab of the push .")]
     GameObject m_PushPrefab;
+    [SerializeField]
+    Transform m_Spine;
 
     /// <summary>
     /// Private variables
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody m_Rb;
     Animator m_Anim;
     Transform m_SpawnLocation;
+
 
 
     void Awake()
@@ -96,17 +99,27 @@ public class PlayerController : MonoBehaviour
         ///ATTACK
         if (Input.GetAxis("Attack" ) == -1f && m_NextAttack < Time.time)
         {
+            Debug.Log("Attacking");
             m_NextAttack = Time.time + m_AttackCD;
             m_Anim.SetTrigger("tAttack");
             //TODO Play sound FX
            
+        }
+        ///ATTACK
+        if (Input.GetButtonDown("Attack") && m_NextAttack < Time.time)
+        {
+            Debug.Log("Attacking");
+            m_NextAttack = Time.time + m_AttackCD;
+            m_Anim.SetTrigger("tAttack");
+            //TODO Play sound FX
+
         }
         ///Special
         if (Input.GetAxis("Special" ) == 1f)
         {
             m_Anim.SetTrigger("tSpecial");
             //TODO Play sound FX
-            GameObject special = Instantiate(m_SpecialPrefab, m_SpawnLocation.position, m_SpawnLocation.rotation) as GameObject;
+            //GameObject special = Instantiate(m_SpecialPrefab, m_SpawnLocation.position, m_SpawnLocation.rotation) as GameObject;
            
           
         }
@@ -121,11 +134,11 @@ public class PlayerController : MonoBehaviour
     }
     private void Movement()
     {
-        Debug.Log(m_DirectionalMovement);
         if (m_DirectionalMovement.sqrMagnitude > 0.01f)
         {
             m_Rb.velocity = m_DirectionalMovement * m_MovementSpeed;
         }
+       
         m_Anim.SetFloat("fMove", m_Rb.velocity.magnitude);
         //m_Rb.AddForce(m_DirectionalMovement * m_MovementSpeed, ForceMode.Force);
     }
@@ -139,11 +152,14 @@ public class PlayerController : MonoBehaviour
         float leftR = Input.GetAxis("RotationY" );
         if (leftR < 0.1f && leftR > -0.1f)
             leftR = 0;
+
+        Debug.Log("RotationX: " + upD + "RotationY: " + leftR);
         if (decimal.Round((decimal)upD, 1) != 0 || decimal.Round((decimal)leftR, 1) != 0)
         {
-            transform.eulerAngles = new Vector3(0f, Mathf.Atan2(m_RotationalDirection.y, m_RotationalDirection.x) * 180f / Mathf.PI, 0f);
-            lastAngle = transform.eulerAngles;
-
+            //transform.eulerAngles = new Vector3(0f, Mathf.Atan2(m_RotationalDirection.y, m_RotationalDirection.x) * 180f / Mathf.PI, 0f);
+           
+            m_Spine.eulerAngles = (new Vector3(0f, Mathf.Atan2(m_RotationalDirection.y, m_RotationalDirection.x) * 180f / Mathf.PI, 0f));
+            lastAngle = m_Spine.eulerAngles;
         }
     }
 
