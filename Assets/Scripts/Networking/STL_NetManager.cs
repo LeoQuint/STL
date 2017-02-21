@@ -7,7 +7,7 @@ public class STL_NetManager : NetworkManager {
 
     public override void OnServerConnect(NetworkConnection conn)
     {
-        Debug.Log("OnPlayerConnected");
+        Debug.Log("OnPlayerConnected : .....");
     }
 
 }

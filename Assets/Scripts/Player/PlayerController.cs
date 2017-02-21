@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
         if (leftR < 0.1f && leftR > -0.1f)
             leftR = 0;
 
-        Debug.Log("RotationX: " + upD + "RotationY: " + leftR);
+
         if (decimal.Round((decimal)upD, 1) != 0 || decimal.Round((decimal)leftR, 1) != 0)
         {
             //transform.eulerAngles = new Vector3(0f, Mathf.Atan2(m_RotationalDirection.y, m_RotationalDirection.x) * 180f / Mathf.PI, 0f);
