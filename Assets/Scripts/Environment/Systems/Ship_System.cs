@@ -10,18 +10,39 @@ public class Ship_System : NetworkBehaviour, Interactable
     
     public int m_System_Health;
 
+    public PlayerStatus m_Interaction_Status;
+
     void Start()
     {
         m_RegisteredPlayer = NetworkInstanceId.Invalid;
     }
     
-    public void RegisterPlayer(NetworkInstanceId player)
+    public bool RegisterPlayer(NetworkInstanceId player)
     {
-        m_RegisteredPlayer = player;
+        if (m_RegisteredPlayer == NetworkInstanceId.Invalid)
+        {
+            m_RegisteredPlayer = player;
+            GameObject registeredPlayer = NetworkServer.FindLocalObject(m_RegisteredPlayer);
+            if (registeredPlayer != null)
+            {
+                registeredPlayer.GetComponent<PlayerController>().m_PlayerStatus = m_Interaction_Status;
+            }
+            return true;
+        }
+        else
+        {
+            //TODO SOUND: play busy sound
+            return false;
+        }
     }
 
     public void UnregisterPlayer()
     {
+        GameObject registeredPlayer = NetworkServer.FindLocalObject(m_RegisteredPlayer);
+        if (registeredPlayer != null)
+        {
+            registeredPlayer.GetComponent<PlayerController>().m_PlayerStatus = PlayerStatus.GAME_DEFAULT;
+        }
         m_RegisteredPlayer = NetworkInstanceId.Invalid;
     }
     /// <summary>
@@ -33,6 +54,11 @@ public class Ship_System : NetworkBehaviour, Interactable
     }
 
     public virtual void Interact()
+    {
+        ///defined in each systems.
+    }
+
+    public virtual void Interact(NetworkInstanceId id)
     {
         ///defined in each systems.
     }

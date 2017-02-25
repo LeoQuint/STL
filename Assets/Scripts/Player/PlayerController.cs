@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+public enum PlayerStatus {
+    NULL, MENU, GAME_DEFAULT,
+    GAME_SYS_NAVIGATION, GAME_SYS_GUNNER_1, GAME_SYS_GUNNER_2, GAME_SYS_POWER, GAME_SYS_ENGINE, GAME_SYS_DOORS, GAME_SYS_MED_BAY, GAME_SYS_SHIELDS, 
+    GAME_SHUTTLE,
+    COUNT
+}
+
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
     //public
     public int m_PlayerNumber;
+
+    public PlayerStatus m_PlayerStatus;
 
     /// <summary>
     /// Serialize
@@ -61,6 +70,7 @@ public class PlayerController : MonoBehaviour
     {
         //Register the player one the main camera
         Camera.main.GetComponent<Camera_Follow>().SetTarget(this.transform);
+        m_PlayerStatus = PlayerStatus.GAME_DEFAULT;
     }
 
     // Use this for initialization
@@ -180,7 +190,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log(other.name);
             if (other.GetComponent<Interact_Zone>())
             {
-                other.GetComponent<Interact_Zone>().Action();
+                other.GetComponent<Interact_Zone>().Action(GetComponent<NetworkIdentity>().netId);
             }
         }
     }

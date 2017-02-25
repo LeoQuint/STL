@@ -8,8 +8,8 @@ public class Camera_Follow : MonoBehaviour {
 
     public Vector3 m_OffSet;
     public float m_CameraSpeed;
-
-    private float m_DistanceToTarget;
+    
+    //private float m_DistanceToTarget;
 
     public void SetTarget(Transform t)
     {
@@ -20,8 +20,8 @@ public class Camera_Follow : MonoBehaviour {
 	void Update () {
         if (m_Target != null)
         {
-            m_DistanceToTarget = Vector3.Distance(transform.position, m_Target.position + m_OffSet);
-            transform.position = Vector3.Lerp(transform.position , m_Target.position + m_OffSet, m_DistanceToTarget * m_CameraSpeed * Time.deltaTime);
+            //m_DistanceToTarget = Vector3.Distance(transform.position, m_Target.position + m_OffSet);
+            transform.position = Vector3.Lerp(transform.position , m_Target.position + m_OffSet, /* m_DistanceToTarget */ m_CameraSpeed * Time.deltaTime);
         }
 	}
 }
