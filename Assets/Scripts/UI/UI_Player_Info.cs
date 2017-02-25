@@ -4,22 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_Player_Info : MonoBehaviour {
-    
-    private Text m_UI_Player_Info_Text;
+
+    public GameObject _UI_Player_Prefab;
+    private Transform m_UI_Player_Info_Text;
+    private Camera m_Player_Camera;
     // Use this for initialization
     void Start () {
-        
-        //The ui element is located on the main canvas.
-        m_UI_Player_Info_Text = GameObject.FindGameObjectWithTag("UI")
-                    .transform.FindChild("playerNamesDisplay")
-                    .transform.FindChild( transform.GetComponentInParent<PlayerController>().m_PlayerNumber.ToString() )
-                    .GetComponent<Text>();
 
-        m_UI_Player_Info_Text.gameObject.SetActive(true);
+        GameObject t = Instantiate(_UI_Player_Prefab) as GameObject;
+        t.transform.SetParent(GameObject.FindGameObjectWithTag("UI").transform);
+        m_UI_Player_Info_Text = t.transform;
+        m_Player_Camera = transform.parent.FindChild("playerCamera").GetComponent<Camera>();
+       
     }
 	
 	// Update is called once per frame
 	void Update () {
-        m_UI_Player_Info_Text.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+        m_UI_Player_Info_Text.transform.position = m_Player_Camera.WorldToScreenPoint(transform.position);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
@@ -45,14 +46,21 @@ public class PlayerController : MonoBehaviour
     Rigidbody m_Rb;
     Animator m_Anim;
     Transform m_SpawnLocation;
-
-
+    Collider m_Collider; 
 
     void Awake()
     {
         m_Rb = GetComponent<Rigidbody>();
         m_Anim = GetComponent<Animator>();
         m_SpawnLocation = transform.FindChild("spawnLocation");
+        m_Collider = GetComponent<Collider>();
+        
+    }
+
+    void OnEnable()
+    {
+        //Register the player one the main camera
+        Camera.main.GetComponent<Camera_Follow>().SetTarget(this.transform);
     }
 
     // Use this for initialization
@@ -130,6 +138,7 @@ public class PlayerController : MonoBehaviour
             //Sound_Manager.Instance.pla
            
         }
+     
 
     }
     private void Movement()
@@ -163,6 +172,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        //Interact
+        if (Input.GetButtonDown("Interact"))
+        {
+            Debug.Log(other.name);
+            if (other.GetComponent<Interact_Zone>())
+            {
+                other.GetComponent<Interact_Zone>().Action();
+            }
+        }
+    }
+
     public void DealDamage(int d)
     {
     }
@@ -171,7 +193,6 @@ public class PlayerController : MonoBehaviour
     {
 
     }
-
 
 
 }
