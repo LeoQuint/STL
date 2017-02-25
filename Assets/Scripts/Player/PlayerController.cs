@@ -10,6 +10,17 @@ public enum PlayerStatus {
     COUNT
 }
 
+public struct PlayerInput
+{
+    //Values of the player's movement up down left right. Left tumbstick.
+    public Vector3 DirectionalMovement;
+    //Values of the player's rotation x,y values for aiming.
+    public Vector3 RotationalDirection;
+    //Buttons used.
+    public bool Push, Attack, Interact, Special, Ultimate, Submit, Cancel;
+}
+
+
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
@@ -43,11 +54,9 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Private variables
     /// </summary>
-    //Values of the player's movement up down left right. Left tumbstick.
-    Vector3 m_DirectionalMovement = Vector3.zero;
-    //Values of the player's rotation x,y values for aiming.
-    Vector3 m_RotationalDirection = Vector3.zero;
-
+    
+    //Current PLayer inputs
+    PlayerInput m_PlayerInput;
 
     /// <summary>
     /// private references
@@ -69,21 +78,20 @@ public class PlayerController : MonoBehaviour
     void OnEnable()
     {
         //Register the player one the main camera
-        Camera.main.GetComponent<Camera_Follow>().SetTarget(this.transform);
+        SetCameraTarget(transform);
         m_PlayerStatus = PlayerStatus.GAME_DEFAULT;
     }
 
-    // Use this for initialization
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
     {
-        GetInput();
-        Movement();
-        SetLookRotation();
+        SetInput();
+        if (m_PlayerStatus == PlayerStatus.GAME_DEFAULT)
+        {
+            Movement();
+            SetLookRotation();
+        }
     }
 
     /// <summary>
@@ -94,68 +102,49 @@ public class PlayerController : MonoBehaviour
     float m_PushCD = 0.5f;
     float m_NextPush = 0f;
 
+    public void SetCameraTarget(Transform t, bool isReseting = false)
+    {
+        if (isReseting)
+        {
+            Camera.main.GetComponent<Camera_Follow>().SetTarget(this.transform);
+        }
+        else
+        {
+            Camera.main.GetComponent<Camera_Follow>().SetTarget(t);
+        }
+        
+    }
 
     //Collects all the input from the controllers.
-    private void GetInput()
+    private void SetInput()
     {
 
         //Directions
-        m_DirectionalMovement.x = Input.GetAxis("Horizontal" );
-        m_DirectionalMovement.z = -Input.GetAxis("Vertical" );
+        m_PlayerInput.DirectionalMovement.x = Input.GetAxis("Horizontal" );
+        m_PlayerInput.DirectionalMovement.z = -Input.GetAxis("Vertical" );
         //Rotations
-        m_RotationalDirection.y = Input.GetAxis("RotationX" );
-        m_RotationalDirection.x = -Input.GetAxis("RotationY" );
+        m_PlayerInput.RotationalDirection.y = Input.GetAxis("RotationX" );
+        m_PlayerInput.RotationalDirection.x = -Input.GetAxis("RotationY" );
 
-        ///PUSH
-        if (Input.GetButtonDown("Push" ) && m_NextPush < Time.time)//Just gonna hard code a cd for push also.
-        {
-            m_NextPush = Time.time + m_PushCD;
-            m_Anim.SetTrigger("tPush");
-            //TODO Play sound FX
-           
-        }
-        ///ATTACK
-        if (Input.GetAxis("Attack" ) == -1f && m_NextAttack < Time.time)
-        {
-            Debug.Log("Attacking");
-            m_NextAttack = Time.time + m_AttackCD;
-            m_Anim.SetTrigger("tAttack");
-            //TODO Play sound FX
-           
-        }
-        ///ATTACK
-        if (Input.GetButtonDown("Attack") && m_NextAttack < Time.time)
-        {
-            Debug.Log("Attacking");
-            m_NextAttack = Time.time + m_AttackCD;
-            m_Anim.SetTrigger("tAttack");
-            //TODO Play sound FX
-
-        }
-        ///Special
-        if (Input.GetAxis("Special" ) == 1f)
-        {
-            m_Anim.SetTrigger("tSpecial");
-            //TODO Play sound FX
-            //GameObject special = Instantiate(m_SpecialPrefab, m_SpawnLocation.position, m_SpawnLocation.rotation) as GameObject;
-           
-          
-        }
-        ///Ultimate
-        if (Input.GetButtonDown("Ultimate" ) )
-        {
-            m_Anim.SetTrigger("tSpecial");
-            //Sound_Manager.Instance.pla
-           
-        }
-     
-
+        m_PlayerInput.Push = Input.GetButtonDown("Push");
+        m_PlayerInput.Attack = Input.GetButtonDown("Attack");
+        m_PlayerInput.Special = Input.GetButtonDown("Special");
+        m_PlayerInput.Ultimate = Input.GetButtonDown("Ultimate");
+        m_PlayerInput.Interact = Input.GetButtonDown("Interact");
+        m_PlayerInput.Submit = Input.GetButtonDown("Submit");
+        m_PlayerInput.Cancel = Input.GetButtonDown("Cancel");
     }
+
+    public PlayerInput GetInput()
+    {
+        return m_PlayerInput;
+    }
+
     private void Movement()
     {
-        if (m_DirectionalMovement.sqrMagnitude > 0.01f)
+        if (m_PlayerInput.DirectionalMovement.sqrMagnitude > 0.01f)
         {
-            m_Rb.velocity = m_DirectionalMovement * m_MovementSpeed;
+            m_Rb.velocity = m_PlayerInput.DirectionalMovement * m_MovementSpeed;
         }
        
         m_Anim.SetFloat("fMove", m_Rb.velocity.magnitude);
@@ -177,7 +166,7 @@ public class PlayerController : MonoBehaviour
         {
             //transform.eulerAngles = new Vector3(0f, Mathf.Atan2(m_RotationalDirection.y, m_RotationalDirection.x) * 180f / Mathf.PI, 0f);
            
-            m_Spine.eulerAngles = (new Vector3(0f, Mathf.Atan2(m_RotationalDirection.y, m_RotationalDirection.x) * 180f / Mathf.PI, 0f));
+            m_Spine.eulerAngles = (new Vector3(0f, Mathf.Atan2(m_PlayerInput.RotationalDirection.y, m_PlayerInput.RotationalDirection.x) * 180f / Mathf.PI, 0f));
             lastAngle = m_Spine.eulerAngles;
         }
     }

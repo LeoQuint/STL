@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class NetworkGameManager : MonoBehaviour {
+public class NetworkGameManager : NetworkBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public NetworkInstanceId m_Ship { get; private set; }
+
+    [SerializeField]
+    public GameObject _Ship;
+
+    void Start()
+    {
+        m_Ship = _Ship.GetComponent<NetworkIdentity>().netId;
+    }
+
 }
