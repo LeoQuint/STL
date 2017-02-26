@@ -43,9 +43,20 @@ public class Ship_Navigation : Ship_System {
 
     public override void Interact(NetworkInstanceId id)
     {
+
         Debug.Log("Interacting with " + gameObject.name);
-        bool reg = RegisterPlayer(id);
-        Debug.Log("User registered to system: " + reg);
+        if (m_RegisteredPlayer == NetworkInstanceId.Invalid)
+        {
+            bool reg = RegisterPlayer(id);
+            Debug.Log("User registered to system: " + reg);
+        }
+        else
+        {
+            UnregisterPlayer();
+            Debug.Log("Player unregistered.");
+        }
+        
+        
         
     }
 }

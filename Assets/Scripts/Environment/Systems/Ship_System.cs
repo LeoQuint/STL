@@ -5,9 +5,10 @@ using UnityEngine.Networking;
 
 public class Ship_System : NetworkBehaviour, Interactable
 {
-    
+
     public NetworkInstanceId m_RegisteredPlayer;
     protected PlayerController m_PlayerController;
+
     
     public int m_System_Health;
 
@@ -23,10 +24,7 @@ public class Ship_System : NetworkBehaviour, Interactable
     
     public bool RegisterPlayer(NetworkInstanceId player)
     {
-        Debug.Log(player);
-        Debug.Log(m_RegisteredPlayer);
-        Debug.Log(NetworkInstanceId.Invalid);
-        Debug.Log(m_RegisteredPlayer == NetworkInstanceId.Invalid);
+       
         if (m_RegisteredPlayer == NetworkInstanceId.Invalid)
         {
             m_RegisteredPlayer = player;
