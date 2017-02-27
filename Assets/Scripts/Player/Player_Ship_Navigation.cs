@@ -15,14 +15,15 @@ public class Player_Ship_Navigation : MonoBehaviour
     {
         if(other.gameObject.tag == "Planet")
         {
-            rb.AddForce((other.transform.position - this.transform.position) * gravitationalPull);
+            rb.AddForce((other.transform.position - transform.position) * gravitationalPull);
         }
     }
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag == "Planet")
         {
-            this.transform.RotateAround(other.transform.position, Vector3.up, 0.5f);
+            transform.RotateAround(other.transform.position, Vector3.up, 0.5f);
+            transform.eulerAngles = Vector3.zero;
         }
     }
 }
