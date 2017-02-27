@@ -23,7 +23,7 @@ public struct PlayerInput
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
-public class PlayerController : MonoBehaviour
+public class STL_PlayerController : MonoBehaviour
 {
     //public
     public int m_PlayerNumber;
