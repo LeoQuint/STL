@@ -23,7 +23,7 @@ public struct PlayerInput
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
-public class STL_PlayerController : MonoBehaviour
+public class STL_PlayerController : NetworkBehaviour
 {
     //public
     public int m_PlayerNumber;
@@ -181,6 +181,32 @@ public class STL_PlayerController : MonoBehaviour
             {
                 other.GetComponent<Interact_Zone>().Action(GetComponent<NetworkIdentity>().netId);
             }
+        }
+    }
+
+    /// <summary>
+    /// This gives the player authority over the object so it can use commands to the server.
+    /// </summary>
+    /// <param name="objectId">The object's network id.</param>
+    /// <param name="player">The controlling plaer.</param>
+    [Command]
+    public void CmdSetAuth(NetworkInstanceId objectId, NetworkIdentity player)
+    {
+        GameObject iObject = NetworkServer.FindLocalObject(objectId);
+        NetworkIdentity netId = iObject.GetComponent<NetworkIdentity>();
+        NetworkConnection otherOwner = netId.clientAuthorityOwner;
+
+        if (otherOwner == player.connectionToClient)
+        {
+            return;
+        }
+        else
+        {
+            if (otherOwner != null)
+            {
+                netId.RemoveClientAuthority(otherOwner);
+            }
+            netId.AssignClientAuthority(player.connectionToClient);
         }
     }
 
