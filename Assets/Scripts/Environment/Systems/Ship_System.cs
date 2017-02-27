@@ -7,7 +7,8 @@ public class Ship_System : NetworkBehaviour, Interactable
 {
 
     public NetworkInstanceId m_RegisteredPlayer;
-    protected PlayerController m_PlayerController;
+    protected STL_PlayerController m_PlayerController;
+    
 
     
     public int m_System_Health;
@@ -29,7 +30,7 @@ public class Ship_System : NetworkBehaviour, Interactable
             GameObject registeredPlayer = NetworkServer.FindLocalObject(m_RegisteredPlayer);
             if (registeredPlayer != null)
             {
-                m_PlayerController = registeredPlayer.GetComponent<PlayerController>();
+                m_PlayerController = registeredPlayer.GetComponent<STL_PlayerController>();
                 m_PlayerController.m_PlayerStatus = m_Interaction_Status;                
             }
             Run();
@@ -47,7 +48,7 @@ public class Ship_System : NetworkBehaviour, Interactable
         GameObject registeredPlayer = NetworkServer.FindLocalObject(m_RegisteredPlayer);
         if (registeredPlayer != null)
         {
-            registeredPlayer.GetComponent<PlayerController>().m_PlayerStatus = PlayerStatus.GAME_DEFAULT;
+            registeredPlayer.GetComponent<STL_PlayerController>().m_PlayerStatus = PlayerStatus.GAME_DEFAULT;
         }
         
         m_RegisteredPlayer = NetworkInstanceId.Invalid;

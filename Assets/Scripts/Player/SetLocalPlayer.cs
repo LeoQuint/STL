@@ -6,7 +6,7 @@ public class SetLocalPlayer : NetworkBehaviour {
     
 	void Start () {
         if (isLocalPlayer) {
-            GetComponent<PlayerController>().enabled = true;
+            GetComponent<STL_PlayerController>().enabled = true;
         }
 	}
 	
