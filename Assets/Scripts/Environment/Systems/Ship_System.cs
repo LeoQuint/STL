@@ -17,8 +17,6 @@ public class Ship_System : NetworkBehaviour, Interactable
     void OnEnable()
     {
         m_RegisteredPlayer = NetworkInstanceId.Invalid;
-        Debug.Log(m_RegisteredPlayer);
-        Debug.Log(NetworkInstanceId.Invalid);
         m_PlayerController = null;
     }
     
