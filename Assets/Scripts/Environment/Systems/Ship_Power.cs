@@ -14,18 +14,25 @@ public class Ship_Power : Ship_System {
     private PlayerInput m_Input;
     private bool m_Running = false;
 
-    private int m_Max_Power = 6;
+    public int m_MaxPower = 6;
     private List<PowerType> s_Power = new List<PowerType>();
+
+    public SyncListInt sl_Power = new SyncListInt();
+    private List<int> local_Power = new List<int>();
 
     public GameObject UI_Power_Overlay;
     private PowerType m_Selected_System;
     private Transform UI_Selector;
 
+    [SyncVar]
+    public int maxInt = 10;
+
     private float m_CycleDelay = 0.2f;
     private float m_CycleTimer = 0f;
 
-    void Start()
+    public override void OnStartClient()
     {
+        Debug.Log("Local start");
         m_CycleTimer = Time.time;
 
         s_Power.Add(PowerType.Lights);
@@ -34,7 +41,21 @@ public class Ship_Power : Ship_System {
         s_Power.Add(PowerType.Shields);
         s_Power.Add(PowerType.Weapons);
         s_Power.Add(PowerType.Doors);
+        if (isServer)
+        {
+            Debug.Log("Is server");
+            sl_Power.Add(2);
+            sl_Power.Add(1);
+            sl_Power.Add(4);
+            sl_Power.Add(6);
+            sl_Power.Add(8);
+            sl_Power.Add(0);
+        }
         m_Selected_System = PowerType.Navigation;
+    }
+
+    void Start()
+    {
         UI_Selector = UI_Power_Overlay.transform.FindChild("Selector");
         SetUI();
     }
@@ -47,7 +68,43 @@ public class Ship_Power : Ship_System {
             m_Input = m_PlayerController.GetInput();
             UserInput();
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            CmdIncrease();
+        }
     }
+
+    [Command]
+    public void CmdIncrease()
+    {
+        maxInt++;
+    }
+
+    [Command]
+    public void CmdAddToSyncList(int added)
+    {
+        Debug.Log("Executing CmdAddToSyncList on server?");
+        sl_Power.Add(added);
+        UpdateLocalList();
+    }
+
+    [Command]
+    public void CmdRemoveAtSyncList(int positionRemoved)
+    {
+        Debug.Log("Executing CmdRemoveAtSyncList on server?");
+        sl_Power.RemoveAt(positionRemoved);
+        UpdateLocalList();
+    }
+
+    private void UpdateLocalList()
+    {
+        s_Power.Clear();
+        foreach (int i in sl_Power)
+        {
+            s_Power.Add((PowerType)i);
+        }
+    }
+
 
     private void UserInput()
     {
@@ -121,12 +178,14 @@ public class Ship_Power : Ship_System {
             return;
         }
         //If we don't have spare power, remove the first element.
-        if (s_Power.Count >= m_Max_Power)
+        if (s_Power.Count >= m_MaxPower)
         {
-            s_Power.RemoveAt(0);            
+            s_Power.RemoveAt(0);
+            CmdRemoveAtSyncList(0);
         }
         s_Power.Add(type);
-        Debug.Log(s_Power);
+        CmdAddToSyncList((int)type);
+
     }
     //Searches for an element to remove. return true/false depending if the search is successfull.
     private bool RemovePowerFromSystem(PowerType type)
@@ -136,11 +195,12 @@ public class Ship_Power : Ship_System {
             if (s_Power[i] == type) // Remove the first element we find.
             {
                 s_Power.RemoveAt(i);
-                Debug.Log(s_Power);
+                CmdRemoveAtSyncList(i);
+
                 return true;
             }
-        }
-        Debug.Log(s_Power);
+        }      
+        
         return false;
     }
 
@@ -150,22 +210,23 @@ public class Ship_Power : Ship_System {
     {
         if (isThisAddition)
         {
-            m_Max_Power += newValue;
+            m_MaxPower += newValue;
         }
         else
         {
-            m_Max_Power = newValue;
+            m_MaxPower = newValue;
         }
     }
     //Getter for max power
     public int GetMaxPower()
     {
-        return m_Max_Power;
+        return m_MaxPower;
     }
 
     public override void Run()
     {
         m_Running = true;
+        UpdateLocalList();
         UI_Power_Overlay.SetActive(true);
     }
 

@@ -5,10 +5,9 @@ using UnityEngine.Networking;
 
 public class Ship_System : NetworkBehaviour, Interactable
 {
-
+    [System.NonSerialized]
     public NetworkInstanceId m_RegisteredPlayer;
     protected STL_PlayerController m_PlayerController;
-    bool m_IsServer;
     
     
     public int m_System_Health;
@@ -17,19 +16,18 @@ public class Ship_System : NetworkBehaviour, Interactable
 
     void OnEnable()
     {
-        m_IsServer = Network.isServer;
         m_RegisteredPlayer = NetworkInstanceId.Invalid;
         m_PlayerController = null;
     }
     
     public bool RegisterPlayer(NetworkInstanceId player)
     {
-       
+        
         if (m_RegisteredPlayer == NetworkInstanceId.Invalid)
         {
             m_RegisteredPlayer = player;
             GameObject registeredPlayer;
-            if (m_IsServer)
+            if (isServer)
             {
                 registeredPlayer = NetworkServer.FindLocalObject(m_RegisteredPlayer);
             }
@@ -40,8 +38,9 @@ public class Ship_System : NetworkBehaviour, Interactable
             if (registeredPlayer != null)
             {
                 m_PlayerController = registeredPlayer.GetComponent<STL_PlayerController>();
-                m_PlayerController.m_PlayerStatus = m_Interaction_Status;                
+                m_PlayerController.m_PlayerStatus = m_Interaction_Status;
             }
+            registeredPlayer.GetComponent<STL_PlayerController>().CmdSetAuth(netId, registeredPlayer.GetComponent<NetworkIdentity>());
             Run();
             return true;
         }
@@ -55,7 +54,7 @@ public class Ship_System : NetworkBehaviour, Interactable
     public void UnregisterPlayer()
     {
         GameObject registeredPlayer;
-        if (m_IsServer)
+        if (isServer)
         {
             registeredPlayer = NetworkServer.FindLocalObject(m_RegisteredPlayer);
         }
@@ -67,14 +66,12 @@ public class Ship_System : NetworkBehaviour, Interactable
         {
             registeredPlayer.GetComponent<STL_PlayerController>().m_PlayerStatus = PlayerStatus.GAME_DEFAULT;
         }
-        
         m_RegisteredPlayer = NetworkInstanceId.Invalid;
         Stop();
         m_PlayerController = null;
     }
-    /// <summary>
-    /// 
-    /// </summary>
+
+
     public virtual void Run()
     {
         ///defined in each systems.
