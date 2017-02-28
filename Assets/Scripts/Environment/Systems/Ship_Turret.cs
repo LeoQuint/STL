@@ -5,13 +5,18 @@ using UnityEngine.Networking;
 
 public class Ship_Turret : Ship_System {
 
+    [Tooltip("The turret component that will get rotated")]
     public GameObject m_Turret;
+    [Tooltip("Object that the camera will look at. Please offset so you can see more to the side")]
     public GameObject m_CameraTarget;
+    [Tooltip("End of the turret barrel, where bullets will spawn")]
     public GameObject m_TurretMuzzle;
+    [Tooltip("Bullet prefab")]
     public GameObject m_Bullet;
 
     [SerializeField] float m_rotationSpeed = 3.0f;
     [SerializeField] float m_bulletSpeed = 10;
+    [Tooltip("Check for south turret, uncheck for north turret")]
     [SerializeField] bool isSouthTurret;
 
     PlayerInput m_input;
