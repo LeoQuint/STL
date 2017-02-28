@@ -9,10 +9,10 @@ public class Ship_Navigation : Ship_System {
 
     public float m_Speed = 1f;
 
-    private Rigidbody m_Rb;
+    private NetworkInstanceId _Ship;
     private PlayerInput m_Input;
     private bool m_Running = false;
-
+    private Player_Ship_Navigation _PSN;
 
     // Update is called once per frame
     void Update()
@@ -20,34 +20,10 @@ public class Ship_Navigation : Ship_System {
         if (m_Running)
         {
             m_Input = m_PlayerController.GetInput();
-            CmdMovement();
-
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                CmdColorSwap();
-            }
+            _PSN.CmdMove(m_Input);
         }
     }
 
-    private void Start()
-    {
-        Debug.Log(STL_NetManager._Ship);
-        m_Ship = NetworkServer.FindLocalObject(STL_NetManager._Ship);
-        m_Rb = m_Ship.GetComponent<Rigidbody>();
-    }
-
-    [Command]
-    void CmdColorSwap()
-    {
-        m_Ship.GetComponent<Renderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-    }
-
-    [Command]
-    void CmdMovement()
-    {
-        m_Rb.AddForce(Vector3.right * m_Input.DirectionalMovement.x * m_Speed);
-        m_Rb.AddForce(Vector3.forward * m_Input.DirectionalMovement.z * m_Speed);
-    }
 
     public override void Run()
     {
@@ -70,10 +46,25 @@ public class Ship_Navigation : Ship_System {
             bool reg = RegisterPlayer(id);
             //Register the ship's owner
             m_PlayerController.CmdSetAuth(netId);
+
+            GameObject netGameMnger = GameObject.FindGameObjectWithTag("NetworkGameManager");
+            _Ship = netGameMnger.GetComponent<NetworkGameManager>().m_Ship;
+            m_PlayerController.CmdSetAuth(_Ship);
+            Debug.Log(_Ship);
+            if (isServer)
+            {
+                _PSN = NetworkServer.FindLocalObject(_Ship).GetComponent<Player_Ship_Navigation>();
+            }
+            else
+            {
+                _PSN = ClientScene.FindLocalObject(_Ship).GetComponent<Player_Ship_Navigation>();
+            }
+            
             Debug.Log("User registered to system: " + reg);
         }
         else
         {
+            _PSN = null;
             UnregisterPlayer();
             Debug.Log("Player unregistered.");
         }

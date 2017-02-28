@@ -133,13 +133,13 @@ public class STL_PlayerController : NetworkBehaviour
         m_PlayerInput.RotationalDirection.y = Input.GetAxis("RotationX" );
         m_PlayerInput.RotationalDirection.x = -Input.GetAxis("RotationY" );
 
-        m_PlayerInput.Push = Input.GetButtonDown("Push");
-        m_PlayerInput.Attack = Input.GetButtonDown("Attack");
-        m_PlayerInput.Special = Input.GetButtonDown("Special");
-        m_PlayerInput.Ultimate = Input.GetButtonDown("Ultimate");
-        m_PlayerInput.Interact = Input.GetButtonDown("Interact");
-        m_PlayerInput.Submit = Input.GetButtonDown("Submit");
-        m_PlayerInput.Cancel = Input.GetButtonDown("Cancel");
+        m_PlayerInput.Push                  = Input.GetButtonDown("Push");
+        m_PlayerInput.Attack                = Input.GetButtonDown("Attack");
+        m_PlayerInput.Special               = Input.GetButtonDown("Special");
+        m_PlayerInput.Ultimate              = Input.GetButtonDown("Ultimate");
+        m_PlayerInput.Interact              = Input.GetButtonDown("Interact");
+        m_PlayerInput.Submit                = Input.GetButtonDown("Submit");
+        m_PlayerInput.Cancel                = Input.GetButtonDown("Cancel");
     }
 
     public PlayerInput GetInput()

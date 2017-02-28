@@ -5,28 +5,25 @@ using UnityEngine.Networking;
 
 public class Player_Ship_Navigation : NetworkBehaviour
 {
-    Rigidbody rb;
+    Rigidbody m_Rb;
     float gravitationalPull = 100f;
+    [SerializeField]
+    float m_Speed = 10f;
 
     public override void OnStartClient()
     {
         if (isServer)
         {
-            STL_NetManager._Ship = netId;
             Debug.Log(netId);
+            m_Rb = gameObject.GetComponent<Rigidbody>();
         }
-    }
-
-    private void Start()
-    {
-        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Planet")
         {
-            rb.AddForce((other.transform.position - transform.position) * gravitationalPull);
+            m_Rb.AddForce((other.transform.position - transform.position) * gravitationalPull);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -37,4 +34,23 @@ public class Player_Ship_Navigation : NetworkBehaviour
             transform.eulerAngles = Vector3.zero;
         }
     }
+
+    [Command]
+    public void CmdMove(PlayerInput input)
+    {
+        Debug.Log(input.DirectionalMovement.x);
+        m_Rb.AddForce(Vector3.right * input.DirectionalMovement.x * m_Speed);
+        m_Rb.AddForce(Vector3.forward * input.DirectionalMovement.z * m_Speed);
+      /*  if (!isServer)
+        {
+            RpcUpdateOnClient(m_Rb.velocity);
+        }*/
+        
+    }
+
+  /*  [ClientRpc]
+    private void RpcUpdateOnClient(Vector3 vel)
+    {
+        m_Rb.velocity = vel;
+    }*/
 }

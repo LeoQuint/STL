@@ -5,20 +5,6 @@ using UnityEngine.Networking;
 
 public class STL_NetManager : NetworkManager {
 
-    //public static STL_NetManager instance;
-    public static NetworkInstanceId _Ship;
-
-   /* private void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            instance = this;
-        }
-    }*/
 
     public override void OnServerConnect(NetworkConnection conn)
     {

@@ -5,14 +5,22 @@ using UnityEngine.Networking;
 
 public class NetworkGameManager : NetworkBehaviour {
 
-    public NetworkInstanceId m_Ship { get; private set; }
+    [SyncVar]
+    public NetworkInstanceId m_Ship;
+
+     
 
     [SerializeField]
     public GameObject _Ship;
 
-    void Start()
-    {       
-        m_Ship = _Ship.GetComponent<NetworkIdentity>().netId;
+    public override void OnStartClient()
+    {
+        if (isServer)
+        {
+            m_Ship = _Ship.GetComponent<NetworkIdentity>().netId;
+        }
     }
+
+
     
 }
