@@ -20,7 +20,7 @@ public class Ship_Navigation : Ship_System {
         if (m_Running)
         {
             m_Input = m_PlayerController.GetInput();
-            _PSN.CmdMove(m_Input);
+            _PSN.Move(m_Input);
         }
     }
 

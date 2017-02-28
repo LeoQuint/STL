@@ -12,11 +12,9 @@ public class Player_Ship_Navigation : NetworkBehaviour
 
     public override void OnStartClient()
     {
-        if (isServer)
-        {
-            Debug.Log(netId);
-            m_Rb = gameObject.GetComponent<Rigidbody>();
-        }
+       
+        m_Rb = gameObject.GetComponent<Rigidbody>();
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,22 +33,13 @@ public class Player_Ship_Navigation : NetworkBehaviour
         }
     }
 
-    [Command]
-    public void CmdMove(PlayerInput input)
+    
+    public void Move(PlayerInput input)
     {
         Debug.Log(input.DirectionalMovement.x);
         m_Rb.AddForce(Vector3.right * input.DirectionalMovement.x * m_Speed);
-        m_Rb.AddForce(Vector3.forward * input.DirectionalMovement.z * m_Speed);
-      /*  if (!isServer)
-        {
-            RpcUpdateOnClient(m_Rb.velocity);
-        }*/
-        
+        m_Rb.AddForce(Vector3.forward * input.DirectionalMovement.z * m_Speed);        
     }
 
-  /*  [ClientRpc]
-    private void RpcUpdateOnClient(Vector3 vel)
-    {
-        m_Rb.velocity = vel;
-    }*/
+
 }
