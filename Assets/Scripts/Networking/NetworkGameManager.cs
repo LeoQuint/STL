@@ -11,8 +11,8 @@ public class NetworkGameManager : NetworkBehaviour {
     public GameObject _Ship;
 
     void Start()
-    {
+    {       
         m_Ship = _Ship.GetComponent<NetworkIdentity>().netId;
     }
-
+    
 }

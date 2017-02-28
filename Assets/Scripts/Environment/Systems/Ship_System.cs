@@ -40,7 +40,7 @@ public class Ship_System : NetworkBehaviour, Interactable
                 m_PlayerController = registeredPlayer.GetComponent<STL_PlayerController>();
                 m_PlayerController.m_PlayerStatus = m_Interaction_Status;
             }
-            registeredPlayer.GetComponent<STL_PlayerController>().CmdSetAuth(netId, registeredPlayer.GetComponent<NetworkIdentity>());
+            registeredPlayer.GetComponent<STL_PlayerController>().CmdSetAuth(netId);
             Run();
             return true;
         }

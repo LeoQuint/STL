@@ -24,8 +24,6 @@ public class Ship_Power : Ship_System {
     private PowerType m_Selected_System;
     private Transform UI_Selector;
 
-    [SyncVar]
-    public int maxInt = 10;
 
     private float m_CycleDelay = 0.2f;
     private float m_CycleTimer = 0f;
@@ -68,22 +66,14 @@ public class Ship_Power : Ship_System {
             m_Input = m_PlayerController.GetInput();
             UserInput();
         }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            CmdIncrease();
-        }
+
     }
 
-    [Command]
-    public void CmdIncrease()
-    {
-        maxInt++;
-    }
+
 
     [Command]
     public void CmdAddToSyncList(int added)
     {
-        Debug.Log("Executing CmdAddToSyncList on server?");
         sl_Power.Add(added);
         UpdateLocalList();
     }
@@ -91,7 +81,6 @@ public class Ship_Power : Ship_System {
     [Command]
     public void CmdRemoveAtSyncList(int positionRemoved)
     {
-        Debug.Log("Executing CmdRemoveAtSyncList on server?");
         sl_Power.RemoveAt(positionRemoved);
         UpdateLocalList();
     }

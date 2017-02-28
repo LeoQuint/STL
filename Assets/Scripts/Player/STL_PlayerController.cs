@@ -64,7 +64,8 @@ public class STL_PlayerController : NetworkBehaviour
     Rigidbody m_Rb;
     Animator m_Anim;
     Transform m_SpawnLocation;
-    Collider m_Collider; 
+    Collider m_Collider;
+    NetworkIdentity m_playerNetId;
 
     void Awake()
     {
@@ -73,6 +74,12 @@ public class STL_PlayerController : NetworkBehaviour
         m_SpawnLocation = transform.FindChild("spawnLocation");
         m_Collider = GetComponent<Collider>();
         
+    }
+
+    public override void OnStartClient()
+    {
+        m_playerNetId = GetComponent<NetworkIdentity>();
+        Debug.Log("Client Connected.");
     }
 
     void OnEnable()
@@ -186,27 +193,33 @@ public class STL_PlayerController : NetworkBehaviour
 
     /// <summary>
     /// This gives the player authority over the object so it can use commands to the server.
+    /// We don't need to remove authority since a new user will do that.
     /// </summary>
-    /// <param name="objectId">The object's network id.</param>
-    /// <param name="player">The controlling plaer.</param>
+    /// <param name="objectId">The object's network id.</param>   
     [Command]
-    public void CmdSetAuth(NetworkInstanceId objectId, NetworkIdentity player)
+    public void CmdSetAuth(NetworkInstanceId objectId)
     {
-        GameObject iObject = NetworkServer.FindLocalObject(objectId);
-        NetworkIdentity netId = iObject.GetComponent<NetworkIdentity>();
-        NetworkConnection otherOwner = netId.clientAuthorityOwner;
+        //First find the object on the network.
+        GameObject netObject = NetworkServer.FindLocalObject(objectId);
+        //Get the network Identity of the object.
+        NetworkIdentity netId = netObject.GetComponent<NetworkIdentity>();
+        //Find the owner of the object.        
+        NetworkConnection netObjectOwner = netId.clientAuthorityOwner;
 
-        if (otherOwner == player.connectionToClient)
+        //Check if this player is currently the owner.
+        if (netObjectOwner == m_playerNetId.connectionToClient)
         {
             return;
         }
         else
         {
-            if (otherOwner != null)
+            //If this object is currently owned by someone else, we remove authority from the previous owner.
+            if (netObjectOwner != null)
             {
-                netId.RemoveClientAuthority(otherOwner);
+                netId.RemoveClientAuthority(netObjectOwner);
             }
-            netId.AssignClientAuthority(player.connectionToClient);
+            //Assign this client to the authority of the object.
+            netId.AssignClientAuthority(m_playerNetId.connectionToClient);
         }
     }
 
