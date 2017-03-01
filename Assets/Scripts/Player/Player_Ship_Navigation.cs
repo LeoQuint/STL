@@ -36,7 +36,6 @@ public class Player_Ship_Navigation : NetworkBehaviour
     
     public void Move(PlayerInput input)
     {
-        Debug.Log(input.DirectionalMovement.x);
         m_Rb.AddForce(Vector3.right * input.DirectionalMovement.x * m_Speed);
         m_Rb.AddForce(Vector3.forward * input.DirectionalMovement.z * m_Speed);        
     }

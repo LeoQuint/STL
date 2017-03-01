@@ -18,11 +18,11 @@ public class Ship_Power : Ship_System {
     private List<PowerType> s_Power = new List<PowerType>();
 
     public SyncListInt sl_Power = new SyncListInt();
-    private List<int> local_Power = new List<int>();
 
     public GameObject UI_Power_Overlay;
     private PowerType m_Selected_System;
     private Transform UI_Selector;
+    private Ship_Data m_ShipData;
 
 
     private float m_CycleDelay = 0.2f;
@@ -39,17 +39,27 @@ public class Ship_Power : Ship_System {
         s_Power.Add(PowerType.Shields);
         s_Power.Add(PowerType.Weapons);
         s_Power.Add(PowerType.Doors);
+
+        m_ShipData = transform.GetComponentInParent<Ship_Data>();
+
         if (isServer)
         {
-            Debug.Log("Is server");
-            sl_Power.Add(2);
-            sl_Power.Add(1);
-            sl_Power.Add(4);
-            sl_Power.Add(6);
-            sl_Power.Add(8);
-            sl_Power.Add(0);
+            SetServerSide();
         }
         m_Selected_System = PowerType.Navigation;
+    }
+
+    void SetServerSide()
+    {
+        Debug.Log("Setting data on server.");
+        sl_Power.Add(2);
+        
+        sl_Power.Add(1);
+        sl_Power.Add(4);
+        sl_Power.Add(6);
+        sl_Power.Add(8);
+        sl_Power.Add(0);
+        UpdateShipData();
     }
 
     void Start()
@@ -66,10 +76,22 @@ public class Ship_Power : Ship_System {
             m_Input = m_PlayerController.GetInput();
             UserInput();
         }
-
     }
 
-
+    
+    public void UpdateShipData()
+    {
+        if (m_PlayerController != null)
+        {
+            m_PlayerController.CmdSetAuth(m_ShipData.GetComponent<NetworkIdentity>().netId);
+            
+            foreach (PowerType p in s_Power)
+            {
+                m_ShipData.CmdSetPowerDistribution(p, 1);
+            }
+        }
+        
+    }
 
     [Command]
     public void CmdAddToSyncList(int added)
@@ -210,6 +232,19 @@ public class Ship_Power : Ship_System {
     public int GetMaxPower()
     {
         return m_MaxPower;
+    }
+
+    public int GetPower(PowerType type)
+    {
+        int count = 0;
+        foreach (PowerType t in s_Power)
+        {
+            if (t == type)
+            {
+                count++;
+            }
+        }
+        return count;
     }
 
     public override void Run()

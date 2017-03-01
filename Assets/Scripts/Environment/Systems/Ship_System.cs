@@ -11,8 +11,11 @@ public class Ship_System : NetworkBehaviour, Interactable
     
     
     public int m_System_Health;
+    
 
     public PlayerStatus m_Interaction_Status;
+    public PowerType m_PowerType;
+    public int m_Power;
 
     void OnEnable()
     {
@@ -70,6 +73,7 @@ public class Ship_System : NetworkBehaviour, Interactable
         Stop();
         m_PlayerController = null;
     }
+
 
 
     public virtual void Run()
