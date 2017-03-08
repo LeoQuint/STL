@@ -6,7 +6,6 @@ using UnityEngine.Networking;
 public class Ship_Shields : Ship_System {
 
     public GameObject m_shield;
-    public GameObject m_ship;
     public GameObject m_cameraTarget;
 
     [SerializeField] float m_rotationSpeed = 3.0f;

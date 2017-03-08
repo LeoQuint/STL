@@ -180,6 +180,10 @@ public class STL_PlayerController : NetworkBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         //Interact
         if (Input.GetButtonDown("Interact"))
         {

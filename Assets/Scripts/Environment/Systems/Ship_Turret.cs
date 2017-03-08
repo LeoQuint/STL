@@ -134,7 +134,6 @@ public class Ship_Turret : Ship_System {
     {
         if(m_input.Attack)
         {
-            Debug.Log("yoyo");
             GameObject spawnedBullet = Instantiate(m_Bullet, m_TurretMuzzle.transform.position, m_Turret.transform.rotation) as GameObject;
             spawnedBullet.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
             spawnedBullet.GetComponent<Rigidbody>().velocity = -spawnedBullet.transform.forward * m_bulletSpeed;
