@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class BulletDespawn : MonoBehaviour {
+public class BulletDespawn : NetworkBehaviour {
 
     [SerializeField] float Lifespan;
     float timer = 0;

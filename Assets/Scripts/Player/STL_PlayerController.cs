@@ -50,7 +50,7 @@ public class STL_PlayerController : NetworkBehaviour
     GameObject m_PushPrefab;
     [SerializeField]
     Transform m_Spine;
-
+    
     /// <summary>
     /// Private variables
     /// </summary>
@@ -66,6 +66,8 @@ public class STL_PlayerController : NetworkBehaviour
     Transform m_SpawnLocation;
     Collider m_Collider;
     NetworkIdentity m_playerNetId;
+
+    bool inside;
 
     void Awake()
     {
@@ -98,6 +100,14 @@ public class STL_PlayerController : NetworkBehaviour
         {
             Movement();
             SetLookRotation();
+        }
+        if(Input.GetButtonDown("Interact"))
+        {
+            inside = true;
+        }
+        if(Input.GetButtonUp("Interact"))
+        {
+            inside = false;
         }
     }
 
@@ -180,17 +190,15 @@ public class STL_PlayerController : NetworkBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
+        
         //Interact
-        if (Input.GetButtonDown("Interact"))
+        if (inside)
         {
             Debug.Log(other.name);
             if (other.GetComponent<Interact_Zone>())
             {
                 other.GetComponent<Interact_Zone>().Action(GetComponent<NetworkIdentity>().netId);
+                inside = false;
             }
         }
     }
@@ -227,6 +235,59 @@ public class STL_PlayerController : NetworkBehaviour
         }
     }
 
+    [ClientRpc]
+    void RpcRotateShield(GameObject shield, Quaternion a)
+    {
+        shield.transform.rotation = a;
+    }
+
+    [Command]
+    public void CmdRotateShield(GameObject shield, Quaternion a)
+    {
+        shield.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+        RpcRotateShield(shield, a);
+        shield.GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToClient);
+    }
+
+    [ClientRpc]
+    void RpcRotateTurret(GameObject turret, float speed)
+    {
+        turret.transform.RotateAround(turret.transform.position, turret.transform.up, speed);
+    }
+
+    [Command]
+    public void CmdRotateTurret(GameObject turret, float speed)
+    {
+        turret.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+        RpcRotateTurret(turret, speed);
+        turret.GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToClient);
+    }
+    
+    /*[ClientRpc]
+    void RpcFireTurret(GameObject turret, GameObject bullet, Vector3 spawnPos, float speed)
+    {
+        GameObject spawnedBullet = NetworkServer.Spawn(bullet) as GameObject;
+        Instantiate(bullet, spawnPos, turret.transform.rotation) as GameObject;//
+        spawnedBullet.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+        spawnedBullet.GetComponent<Rigidbody>().velocity = -spawnedBullet.transform.forward * speed;
+    }*/
+
+    [Command]
+    public void CmdFireTurret(GameObject turret, Vector3 spawnPos, float speed)
+    {
+        GameObject spawnedBullet = Instantiate(Resources.Load("Bullet", typeof (GameObject)), spawnPos, turret.transform.rotation) as GameObject;
+        //spawnedBullet.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+        spawnedBullet.GetComponent<Rigidbody>().velocity = -spawnedBullet.transform.forward * speed;
+        if(isServer)
+        {
+            NetworkServer.Spawn(spawnedBullet);
+        }
+        else if(isClient)
+        {
+            NetworkServer.SpawnWithClientAuthority(spawnedBullet, connectionToClient);
+        }
+    }
+    
     public void DealDamage(int d)
     {
     }

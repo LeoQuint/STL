@@ -41,7 +41,6 @@ public class Ship_Power : Ship_System {
         s_Power.Add(PowerType.Doors);
 
         m_ShipData = transform.GetComponentInParent<Ship_Data>();
-
         if (isServer)
         {
             SetServerSide();
@@ -81,8 +80,10 @@ public class Ship_Power : Ship_System {
     
     public void UpdateShipData()
     {
+        print(m_PlayerController);
         if (m_PlayerController != null)
         {
+            print(m_ShipData.GetComponent<NetworkIdentity>().netId);
             m_PlayerController.CmdSetAuth(m_ShipData.GetComponent<NetworkIdentity>().netId);
             
             foreach (PowerType p in s_Power)

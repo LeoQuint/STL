@@ -6,29 +6,37 @@ using UnityEngine.Networking;
 public class Ship_Turret : Ship_System {
 
     [Tooltip("The turret component that will get rotated")]
+    [SyncVar]
     public GameObject m_Turret;
     [Tooltip("Object that the camera will look at. Please offset so you can see more to the side")]
     public GameObject m_CameraTarget;
     [Tooltip("End of the turret barrel, where bullets will spawn")]
     public GameObject m_TurretMuzzle;
     [Tooltip("Bullet prefab")]
+    [SyncVar]
     public GameObject m_Bullet;
 
+    [SyncVar]
     [SerializeField] float m_rotationSpeed = 3.0f;
+    [SyncVar]
     [SerializeField] float m_bulletSpeed = 10;
     [Tooltip("Check for south turret, uncheck for north turret")]
+    [SyncVar]
     [SerializeField] bool isSouthTurret;
 
     PlayerInput m_input;
     bool m_running = false;
+
+    [SyncVar]
     bool m_canRotateDown = true;
+    [SyncVar]
     bool m_canRotateUp = true;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    public override void OnStartClient ()
     {
-		
-	}
+        ClientScene.RegisterPrefab(m_Bullet);
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -118,25 +126,23 @@ public class Ship_Turret : Ship_System {
         {
             if ((m_input.DirectionalMovement.z > 0 && m_canRotateUp) || (m_input.DirectionalMovement.z < 0 && m_canRotateDown))
             {
-                m_Turret.transform.RotateAround(m_Turret.transform.position, -m_Turret.transform.up, (m_input.DirectionalMovement.z * m_rotationSpeed));
+                m_PlayerController.CmdRotateTurret(m_Turret, (-m_input.DirectionalMovement.z * m_rotationSpeed));
             }
         }
         else
         {
             if ((m_input.DirectionalMovement.z > 0 && m_canRotateUp) || (m_input.DirectionalMovement.z < 0 && m_canRotateDown))
             {
-                m_Turret.transform.RotateAround(m_Turret.transform.position, m_Turret.transform.up, (m_input.DirectionalMovement.z * m_rotationSpeed));
+                m_PlayerController.CmdRotateTurret(m_Turret, (m_input.DirectionalMovement.z * m_rotationSpeed));
             }
         }
     }
-    
+
     private void AttemptToShoot()
     {
         if(m_input.Attack)
         {
-            GameObject spawnedBullet = Instantiate(m_Bullet, m_TurretMuzzle.transform.position, m_Turret.transform.rotation) as GameObject;
-            spawnedBullet.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-            spawnedBullet.GetComponent<Rigidbody>().velocity = -spawnedBullet.transform.forward * m_bulletSpeed;
+            m_PlayerController.CmdFireTurret(m_Turret, m_TurretMuzzle.transform.position, m_bulletSpeed);
         }
     }
 }

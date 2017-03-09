@@ -5,7 +5,8 @@ using UnityEngine.Networking;
 
 public class Ship_System : NetworkBehaviour, Interactable
 {
-    [System.NonSerialized]
+    //[System.NonSerialized]
+    [SyncVar]
     public NetworkInstanceId m_RegisteredPlayer;
     protected STL_PlayerController m_PlayerController;
     
