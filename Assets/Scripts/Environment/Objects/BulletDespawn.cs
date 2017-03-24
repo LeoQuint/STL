@@ -22,4 +22,9 @@ public class BulletDespawn : NetworkBehaviour {
             Destroy(this.gameObject);
         }
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
 }

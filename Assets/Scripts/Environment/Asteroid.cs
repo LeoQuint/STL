@@ -8,11 +8,12 @@ public class Asteroid : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Bounds" || collision.gameObject.tag == "Planet")
         {
-            Destroy(gameObject);
+            
         }
         else if (collision.gameObject.tag == "Ship")
         {
-            Destroy(gameObject);
+            
         }
+        Destroy(gameObject);
     }
 }
