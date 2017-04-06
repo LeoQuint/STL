@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public enum PlayerStatus {
     NULL, MENU, GAME_DEFAULT,
@@ -50,6 +52,12 @@ public class STL_PlayerController : NetworkBehaviour
     GameObject m_PushPrefab;
     [SerializeField]
     Transform m_Spine;
+
+    [SerializeField]
+    Slider m_HealthSlider;
+
+    [SyncVar]
+    public float ShipHealth = 100;
     
     /// <summary>
     /// Private variables
@@ -76,7 +84,17 @@ public class STL_PlayerController : NetworkBehaviour
         m_Anim = GetComponent<Animator>();
         m_SpawnLocation = transform.FindChild("spawnLocation");
         m_Collider = GetComponent<Collider>();
-        
+    }
+
+    void Start()
+    {
+        m_HealthSlider = GameObject.FindGameObjectWithTag("UI").transform.FindChild("Slider").GetComponent<Slider>();
+    }
+
+    [Command]
+    public void CmdChangeHealth(float num)
+    {
+        ShipHealth += num;
     }
 
     public override void OnStartClient()
@@ -109,6 +127,12 @@ public class STL_PlayerController : NetworkBehaviour
         if(Input.GetButtonUp("Interact"))
         {
             inside = false;
+        }
+        m_HealthSlider.value = ShipHealth/100f;
+        m_HealthSlider.fillRect.GetComponent<Image>().color = Color.Lerp( Color.red, Color.green, ShipHealth /100f);
+        if (ShipHealth <= 0)
+        {
+            SceneManager.LoadScene("EndGameSceneLose");
         }
     }
 

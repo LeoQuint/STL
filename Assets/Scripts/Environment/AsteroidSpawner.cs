@@ -80,7 +80,8 @@ public class AsteroidSpawner : NetworkBehaviour {
             spawnRotation = Quaternion.identity;
             now = Time.time + spawnRate;
             GameObject spawnedAsteroid = Instantiate(Resources.Load("Asteroid", typeof(GameObject)), spawnLocation, spawnRotation, shipLevel.transform) as GameObject;
-            spawnedAsteroid.GetComponent<Rigidbody>().velocity = ((ship.transform.position + new Vector3(targetRadius * Mathf.Cos(Random.value * 2 * Mathf.PI), 0, targetRadius * Mathf.Sin(Random.value * 2 * Mathf.PI))) - spawnedAsteroid.transform.position);
+            spawnedAsteroid.GetComponent<Rigidbody>().AddForce((ship.transform.position + new Vector3(targetRadius * Mathf.Cos(Random.value * 2 * Mathf.PI), 0, targetRadius * Mathf.Sin(Random.value * 2 * Mathf.PI))) - spawnedAsteroid.transform.position, ForceMode.Impulse);
+            
             NetworkServer.Spawn(spawnedAsteroid);
             
             goodSpawn = false;

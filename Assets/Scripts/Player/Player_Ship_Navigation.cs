@@ -6,7 +6,8 @@ using UnityEngine.Networking;
 public class Player_Ship_Navigation : NetworkBehaviour
 {
     Rigidbody m_Rb;
-    float gravitationalPull = 100f;
+    float gravitationalPull = 30f;
+    float rotationSpeed = 0.35f;
     [SerializeField]
     float m_Speed = 10f;
 
@@ -28,7 +29,7 @@ public class Player_Ship_Navigation : NetworkBehaviour
     {
         if(other.gameObject.tag == "Planet")
         {
-            transform.RotateAround(other.transform.position, Vector3.up, 0.5f);
+            transform.RotateAround(other.transform.position, Vector3.up, rotationSpeed);
             transform.eulerAngles = Vector3.zero;
         }
     }
