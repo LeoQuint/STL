@@ -68,6 +68,7 @@ public class STL_PlayerController : NetworkBehaviour
     NetworkIdentity m_playerNetId;
 
     bool inside;
+    private bool _mouseEnabled = true;
 
     void Awake()
     {
@@ -169,23 +170,35 @@ public class STL_PlayerController : NetworkBehaviour
     }
 
     private Vector3 lastAngle;
+
     void SetLookRotation()
     {
-        float upD = Input.GetAxis("RotationX" );
-        if (upD < 0.1f && upD > -0.1f)
-            upD = 0;
-        float leftR = Input.GetAxis("RotationY" );
-        if (leftR < 0.1f && leftR > -0.1f)
-            leftR = 0;
-
-
-        if (decimal.Round((decimal)upD, 1) != 0 || decimal.Round((decimal)leftR, 1) != 0)
+        if (_mouseEnabled)//mouse Input
         {
-            //transform.eulerAngles = new Vector3(0f, Mathf.Atan2(m_RotationalDirection.y, m_RotationalDirection.x) * 180f / Mathf.PI, 0f);
-           
-            m_Spine.eulerAngles = (new Vector3(0f, Mathf.Atan2(m_PlayerInput.RotationalDirection.y, m_PlayerInput.RotationalDirection.x) * 180f / Mathf.PI, 0f));
-            lastAngle = m_Spine.eulerAngles;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100f))
+            {
+                transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+            }
         }
+        else //Controller input.
+        {
+            float upD = Input.GetAxis("RotationX");
+            if (upD < 0.1f && upD > -0.1f)
+                upD = 0;
+            float leftR = Input.GetAxis("RotationY");
+            if (leftR < 0.1f && leftR > -0.1f)
+                leftR = 0;
+            if (decimal.Round((decimal)upD, 1) != 0 || decimal.Round((decimal)leftR, 1) != 0)
+            {
+                //transform.eulerAngles = new Vector3(0f, Mathf.Atan2(m_RotationalDirection.y, m_RotationalDirection.x) * 180f / Mathf.PI, 0f);
+
+                m_Spine.eulerAngles = (new Vector3(0f, Mathf.Atan2(m_PlayerInput.RotationalDirection.y, m_PlayerInput.RotationalDirection.x) * 180f / Mathf.PI, 0f));
+                lastAngle = m_Spine.eulerAngles;
+            }
+        }
+       
     }
 
     void OnTriggerStay(Collider other)
