@@ -56,7 +56,7 @@ public class STL_PlayerController : NetworkBehaviour
     [SerializeField]
     Slider m_HealthSlider;
 
-    [SyncVar]
+    [SyncVar(hook = "ChangeHealth")]
     public float ShipHealth = 100;
     
     /// <summary>
@@ -94,6 +94,15 @@ public class STL_PlayerController : NetworkBehaviour
         m_HealthSlider = GameObject.FindGameObjectWithTag("UI").transform.FindChild("Slider").GetComponent<Slider>();
     }
 
+    public void ChangeHealth(float hp)
+    {
+        ShipHealth = hp;
+        Debug.Log(ShipHealth);
+        m_HealthSlider.value = ShipHealth / 100f;
+        Debug.Log(m_HealthSlider.value);
+        m_HealthSlider.fillRect.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green, ShipHealth / 100f);
+    }
+
     /*
     [ClientRpc]
     public void RpcChangeHealth(float hp)
@@ -113,6 +122,7 @@ public class STL_PlayerController : NetworkBehaviour
     {
         m_playerNetId = GetComponent<NetworkIdentity>();
         Debug.Log("Client Connected.");
+        m_HealthSlider = GameObject.FindGameObjectWithTag("UI").transform.FindChild("Slider").GetComponent<Slider>();
     }
 
     void OnEnable()
@@ -141,9 +151,7 @@ public class STL_PlayerController : NetworkBehaviour
             inside = false;
         }
         Debug.Log(ShipHealth);
-        m_HealthSlider.value = ShipHealth/100f;
-        Debug.Log(m_HealthSlider.value);
-        m_HealthSlider.fillRect.GetComponent<Image>().color = Color.Lerp( Color.red, Color.green, ShipHealth /100f);
+        
         if (ShipHealth <= 0)
         {
             SceneManager.LoadScene("EndGameSceneLose");
