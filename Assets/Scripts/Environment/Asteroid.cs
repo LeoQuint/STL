@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class Asteroid : NetworkBehaviour
 {
     public GameObject explosion;
+    private int numMini = 3;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,8 +28,19 @@ public class Asteroid : NetworkBehaviour
                 }
             }
         }
-        GameObject explode = Instantiate(Resources.Load("Explosion", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject;
-        NetworkServer.Spawn(explode);
+        if (collision.gameObject.tag != "MiniAsteroid")
+        {
+            Destruction();
+        }
+    }
+
+    void Destruction()
+    {
+        for (int i = 0; i < numMini; i++)
+        {
+            GameObject explode = Instantiate(Resources.Load("Explosion", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject;
+            NetworkServer.Spawn(explode);
+        }
         Destroy(gameObject);
     }
 
@@ -36,9 +48,7 @@ public class Asteroid : NetworkBehaviour
     {
         if (collision.gameObject.tag == "Shield")
         {
-            GameObject explode = Instantiate(Resources.Load("Explosion", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject;
-            NetworkServer.Spawn(explode);
-            Destroy(gameObject);
+            Destruction();
         }
     }
 
