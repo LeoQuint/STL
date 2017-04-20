@@ -91,12 +91,21 @@ public class STL_PlayerController : NetworkBehaviour
         m_HealthSlider = GameObject.FindGameObjectWithTag("UI").transform.FindChild("Slider").GetComponent<Slider>();
     }
 
+    /*
+    [ClientRpc]
+    public void RpcChangeHealth(float hp)
+    {
+        ShipHealth = hp;
+        Debug.Log(ShipHealth);
+    }
+
     [Command]
     public void CmdChangeHealth(float num)
     {
         ShipHealth += num;
+        //RpcChangeHealth(ShipHealth);
     }
-
+    */
     public override void OnStartClient()
     {
         m_playerNetId = GetComponent<NetworkIdentity>();
@@ -128,7 +137,9 @@ public class STL_PlayerController : NetworkBehaviour
         {
             inside = false;
         }
+        Debug.Log(ShipHealth);
         m_HealthSlider.value = ShipHealth/100f;
+        Debug.Log(m_HealthSlider.value);
         m_HealthSlider.fillRect.GetComponent<Image>().color = Color.Lerp( Color.red, Color.green, ShipHealth /100f);
         if (ShipHealth <= 0)
         {
@@ -144,15 +155,19 @@ public class STL_PlayerController : NetworkBehaviour
     float m_PushCD = 0.5f;
     float m_NextPush = 0f;
 
-    public void SetCameraTarget(Transform t, bool isReseting = false)
+    public void SetCameraTarget(Transform t, bool isReseting = true)
     {
         if (isReseting)
         {
             Camera.main.GetComponent<Camera_Follow>().SetTarget(this.transform);
+            Camera.main.GetComponent<Camera_Follow>().m_OffSet = new Vector3(Camera.main.GetComponent<Camera_Follow>().m_OffSet.x, 9, Camera.main.GetComponent<Camera_Follow>().m_OffSet.z);
+            Camera.main.transform.eulerAngles = new Vector3(70, 0, 0);
         }
         else
         {
             Camera.main.GetComponent<Camera_Follow>().SetTarget(t);
+            Camera.main.GetComponent<Camera_Follow>().m_OffSet = new Vector3(Camera.main.GetComponent<Camera_Follow>().m_OffSet.x, 27, Camera.main.GetComponent<Camera_Follow>().m_OffSet.z);
+            Camera.main.transform.eulerAngles = new Vector3(80, 0, 0);
         }
         
     }
