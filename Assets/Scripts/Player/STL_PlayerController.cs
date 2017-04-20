@@ -154,7 +154,10 @@ public class STL_PlayerController : NetworkBehaviour
         
         if (ShipHealth <= 0)
         {
-            SceneManager.LoadScene("EndGameSceneLose");
+            if(isServer)
+            {
+                CmdDed();
+            }
         }
     }
 
@@ -296,6 +299,19 @@ public class STL_PlayerController : NetworkBehaviour
             //Assign this client to the authority of the object.
             netId.AssignClientAuthority(m_playerNetId.connectionToClient);
         }
+    }
+
+    [ClientRpc]
+    void RpcDed()
+    {
+        SceneManager.LoadScene("EndGameSceneLose");
+    }
+
+    [Command]
+    public void CmdDed()
+    {
+        RpcDed();
+        SceneManager.LoadScene("EndGameSceneLose");
     }
 
     [ClientRpc]
