@@ -78,12 +78,15 @@ public class STL_PlayerController : NetworkBehaviour
     bool inside;
     private bool _mouseEnabled = true;
 
+    public Rigidbody ship_rb;
+
     void Awake()
     {
         m_Rb = GetComponent<Rigidbody>();
         m_Anim = GetComponent<Animator>();
         m_SpawnLocation = transform.FindChild("spawnLocation");
         m_Collider = GetComponent<Collider>();
+        ship_rb = GameObject.Find("Ship").GetComponent<Rigidbody>();
     }
 
     void Start()
@@ -329,7 +332,7 @@ public class STL_PlayerController : NetworkBehaviour
     {
         GameObject spawnedBullet = Instantiate(Resources.Load("Bullet", typeof (GameObject)), spawnPos, turret.transform.rotation) as GameObject;
         //spawnedBullet.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-        spawnedBullet.GetComponent<Rigidbody>().velocity = -spawnedBullet.transform.forward * speed;
+        spawnedBullet.GetComponent<Rigidbody>().velocity = -spawnedBullet.transform.forward * speed + ship_rb.velocity;
         if(isServer)
         {
             NetworkServer.Spawn(spawnedBullet);
