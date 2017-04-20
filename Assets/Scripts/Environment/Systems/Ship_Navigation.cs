@@ -28,7 +28,7 @@ public class Ship_Navigation : Ship_System {
     public override void Run()
     {
         m_Running = true;
-        m_PlayerController.SetCameraTarget(m_Ship.transform);
+        m_PlayerController.SetCameraTarget(m_Ship.transform, false);
     }
 
     public override void Stop()
@@ -38,8 +38,7 @@ public class Ship_Navigation : Ship_System {
     }
 
     public override void Interact(NetworkInstanceId id)
-    {
-
+    {   
         Debug.Log("Interacting with " + gameObject.name);
         if (m_RegisteredPlayer == NetworkInstanceId.Invalid)
         {
@@ -59,7 +58,7 @@ public class Ship_Navigation : Ship_System {
             {
                 _PSN = ClientScene.FindLocalObject(_Ship).GetComponent<Player_Ship_Navigation>();
             }
-            
+
             Debug.Log("User registered to system: " + reg);
         }
         else
@@ -68,8 +67,5 @@ public class Ship_Navigation : Ship_System {
             UnregisterPlayer();
             Debug.Log("Player unregistered.");
         }
-        
-        
-        
-    }
+    }   
 }

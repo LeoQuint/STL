@@ -7,12 +7,6 @@ public class Asteroid : NetworkBehaviour
 {
     public GameObject explosion;
 
-    private void OnDestroy()
-    {
-        GameObject explode = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
-        NetworkServer.Spawn(explode);
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Bounds" || collision.gameObject.tag == "Planet")
@@ -28,10 +22,13 @@ public class Asteroid : NetworkBehaviour
                 Debug.Log(p.GetComponent<STL_PlayerController>().enabled);
                 if (p.GetComponent<STL_PlayerController>().enabled)
                 {
-                    p.GetComponent<STL_PlayerController>().CmdChangeHealth(-12.5f);
+                    //TODO:  CHanged ChangeHealth away from a CMD
+                    p.GetComponent<STL_PlayerController>().ShipHealth -= 12.5f;
                 }
             }
         }
+        GameObject explode = Instantiate(Resources.Load("Explosion", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject;
+        NetworkServer.Spawn(explode);
         Destroy(gameObject);
     }
 
@@ -39,12 +36,15 @@ public class Asteroid : NetworkBehaviour
     {
         if (collision.gameObject.tag == "Shield")
         {
+            GameObject explode = Instantiate(Resources.Load("Explosion", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject;
+            NetworkServer.Spawn(explode);
             Destroy(gameObject);
         }
     }
 
     public override void OnStartClient()
     {
+        ClientScene.RegisterPrefab(explosion);
         transform.GetComponent<Rigidbody>().angularVelocity = Random.insideUnitSphere * 1000f;
     }
 

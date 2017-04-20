@@ -24,4 +24,9 @@ public class MenuButtons : MonoBehaviour {
     {
         SceneManager.LoadScene("networkTest1");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

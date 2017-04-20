@@ -53,7 +53,7 @@ public class Ship_Turret : Ship_System {
     public override void Run()
     {
         m_running = true;
-        m_PlayerController.SetCameraTarget(m_CameraTarget.transform);
+        m_PlayerController.SetCameraTarget(m_CameraTarget.transform, false);
     }
 
     public override void Stop()
