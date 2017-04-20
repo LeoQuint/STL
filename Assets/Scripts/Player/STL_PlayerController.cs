@@ -106,6 +106,7 @@ public class STL_PlayerController : NetworkBehaviour
         m_HealthSlider.value = ShipHealth / 100f;
         Debug.Log(m_HealthSlider.value);
         m_HealthSlider.fillRect.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green, ShipHealth / 100f);
+        Camera.main.GetComponent<HitEffect>().activate = true;
     }
 
     /*
