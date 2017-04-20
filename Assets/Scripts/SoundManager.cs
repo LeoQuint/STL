@@ -8,6 +8,9 @@ public enum clip_type
 {
     Music,
     AsteroidExplosion,
+    ShieldExplosion,
+    ShipShot,
+
 }
 
 [Serializable]
@@ -83,6 +86,7 @@ public class SoundManager : Singleton<SoundManager>
             }
         }
         AudioSource go = gameObject.AddComponent<AudioSource>();
+        go.maxDistance = 27;
         audio_sources.Add(go);
         return go;
     }

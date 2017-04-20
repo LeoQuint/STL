@@ -32,9 +32,12 @@ public class Ship_Turret : Ship_System {
     [SyncVar]
     bool m_canRotateUp = true;
 
+    SoundManager sm;
+
     // Use this for initialization
     public override void OnStartClient ()
     {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         ClientScene.RegisterPrefab(m_Bullet);
     }
 	
@@ -142,6 +145,7 @@ public class Ship_Turret : Ship_System {
     {
         if(m_input.Attack)
         {
+            sm.Play_Event(clip_type.ShipShot);
             m_PlayerController.CmdFireTurret(m_Turret, m_TurretMuzzle.transform.position, m_bulletSpeed);
         }
     }

@@ -8,6 +8,13 @@ public class Asteroid : NetworkBehaviour
     public GameObject explosion;
     private int numMini = 3;
 
+    SoundManager sm;
+
+    void Start()
+    {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Bounds" || collision.gameObject.tag == "Planet")
@@ -36,6 +43,7 @@ public class Asteroid : NetworkBehaviour
 
     void Destruction()
     {
+        sm.Play_Event(clip_type.AsteroidExplosion);
         for (int i = 0; i < numMini; i++)
         {
             GameObject explode = Instantiate(Resources.Load("Explosion", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject;
@@ -48,6 +56,7 @@ public class Asteroid : NetworkBehaviour
     {
         if (collision.gameObject.tag == "Shield")
         {
+            sm.Play_Event(clip_type.ShieldExplosion);
             Destruction();
         }
     }
