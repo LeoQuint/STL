@@ -30,7 +30,6 @@ public class Asteroid : NetworkBehaviour
                 Debug.Log(p.GetComponent<STL_PlayerController>().enabled);
                 if (p.GetComponent<STL_PlayerController>().enabled)
                 {
-                    //TODO:  CHanged ChangeHealth away from a CMD
                     p.GetComponent<STL_PlayerController>().ShipHealth -= 12.5f;
                 }
             }

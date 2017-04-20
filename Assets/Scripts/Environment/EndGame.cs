@@ -22,7 +22,15 @@ public class EndGame : MonoBehaviour {
     {
         if(other.gameObject == player)
         {
-            SceneManager.LoadScene("EndGameScene");
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject p in players)
+            {
+                Debug.Log(p.GetComponent<STL_PlayerController>().enabled);
+                if (p.GetComponent<STL_PlayerController>().enabled)
+                {
+                    p.GetComponent<STL_PlayerController>().CmdWin();
+                }
+            }
         }
     }
 }
