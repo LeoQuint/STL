@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour {
-    
+
+    SoundManager sm;
+
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        sm.Play_Music("MenuTheme");
 	}
 	
 	// Update is called once per frame
@@ -23,6 +27,7 @@ public class MenuButtons : MonoBehaviour {
     public void LoadGameScene()
     {
         SceneManager.LoadScene("networkTest1");
+        sm.Play_Music("GameTheme");
     }
 
     public void QuitGame()

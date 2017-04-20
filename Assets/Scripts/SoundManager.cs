@@ -6,7 +6,8 @@ using System;
 //These are the enums that you can use to split up the clips
 public enum clip_type
 {
-    Music
+    Music,
+    AsteroidExplosion,
 }
 
 [Serializable]
@@ -40,6 +41,19 @@ public class SoundManager : Singleton<SoundManager>
             }
         }
         music_player.Play();
+    }
+
+    public void PlayClip(string clip)
+    {
+        AudioSource tempSource = Get_Free_Source();
+        for (int i = 0; i < audio_clips.Count; i++)
+        {
+            if (clip == audio_clips[i].name)
+            {
+               tempSource.clip = audio_clips[i].clip;
+               tempSource.Play();
+            }
+        }
     }
 
     public void Play_Event(clip_type genre)
