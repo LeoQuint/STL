@@ -34,4 +34,12 @@ public class MiniAsteroid : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Shield")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
