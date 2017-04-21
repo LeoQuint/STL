@@ -129,6 +129,7 @@ public class STL_PlayerController : NetworkBehaviour
         m_playerNetId = GetComponent<NetworkIdentity>();
         Debug.Log("Client Connected.");
         m_HealthSlider = GameObject.FindGameObjectWithTag("UI").transform.FindChild("Slider").GetComponent<Slider>();
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     void OnEnable()
