@@ -11,6 +11,15 @@ public class Player_Ship_Navigation : NetworkBehaviour
     [SerializeField]
     float m_Speed = 10f;
 
+    SoundManager sm;
+    float sfxTimer = 0;
+    float sfxMaxTime = 0.6f;
+
+    void Start()
+    {
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+    }
+
     public override void OnStartClient()
     {
        
@@ -38,7 +47,23 @@ public class Player_Ship_Navigation : NetworkBehaviour
     public void Move(PlayerInput input)
     {
         m_Rb.AddForce(Vector3.right * input.DirectionalMovement.x * m_Speed);
-        m_Rb.AddForce(Vector3.forward * input.DirectionalMovement.z * m_Speed);        
+        m_Rb.AddForce(Vector3.forward * input.DirectionalMovement.z * m_Speed);
+        if (input.DirectionalMovement.sqrMagnitude > 0.01f)
+        {
+            if (sfxTimer == 0)
+            {
+                sm.PlayClip("ShipEngine", sm.transform.position);
+            }
+            sfxTimer += Time.deltaTime;
+            if (sfxTimer >= sfxMaxTime)
+            {
+                sfxTimer = 0;
+            }
+        }
+        else
+        {
+            sfxTimer = 0;
+        }
     }
 
 

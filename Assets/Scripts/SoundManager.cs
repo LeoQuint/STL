@@ -13,7 +13,7 @@ public enum clip_type
     AsteroidExplosion,
     ShieldExplosion,
     ShipShot,
-
+    Walking,
 }
 
 [Serializable]
@@ -35,6 +35,7 @@ public class SoundManager : Singleton<SoundManager>
         SoundThreshold = 300f;
         this.gameObject.transform.localPosition = Vector3.zero;
         SceneManager.activeSceneChanged += AddToCamera;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void AddToCamera(Scene previousScene, Scene newScene)

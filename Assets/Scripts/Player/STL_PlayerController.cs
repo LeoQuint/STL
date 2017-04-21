@@ -80,6 +80,10 @@ public class STL_PlayerController : NetworkBehaviour
 
     public Rigidbody ship_rb;
 
+    float sfxTimer = 0;
+    float sfxMaxTime = 0.5f;
+    SoundManager sm;
+
     void Awake()
     {
         m_Rb = GetComponent<Rigidbody>();
@@ -92,6 +96,7 @@ public class STL_PlayerController : NetworkBehaviour
     void Start()
     {
         m_HealthSlider = GameObject.FindGameObjectWithTag("UI").transform.FindChild("Slider").GetComponent<Slider>();
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     public void ChangeHealth(float hp)
@@ -216,6 +221,19 @@ public class STL_PlayerController : NetworkBehaviour
         if (m_PlayerInput.DirectionalMovement.sqrMagnitude > 0.01f)
         {
             m_Rb.velocity = m_PlayerInput.DirectionalMovement * m_MovementSpeed;
+            if(sfxTimer == 0)
+            {
+                sm.Play_Event(clip_type.Walking, sm.transform.position);///////////////////////////////////////////////////////////HERE GRANT
+            }
+            sfxTimer += Time.deltaTime;
+            if(sfxTimer >= sfxMaxTime)
+            {
+                sfxTimer = 0;
+            }
+        }
+        else
+        {
+            sfxTimer = 0;
         }
        
         m_Anim.SetFloat("fMove", m_Rb.velocity.magnitude);
@@ -304,12 +322,16 @@ public class STL_PlayerController : NetworkBehaviour
     [ClientRpc]
     void RpcWin()
     {
+        Camera.main.transform.DetachChildren();
+        DontDestroyOnLoad(sm.gameObject);
         SceneManager.LoadScene("EndGameScene");
     }
 
     [Command]
     public void CmdWin()
     {
+        Camera.main.transform.DetachChildren();
+        DontDestroyOnLoad(sm.gameObject);
         RpcWin();
         SceneManager.LoadScene("EndGameScene");
     }
@@ -317,12 +339,16 @@ public class STL_PlayerController : NetworkBehaviour
     [ClientRpc]
     void RpcDed()
     {
+        Camera.main.transform.DetachChildren();
+        DontDestroyOnLoad(sm.gameObject);
         SceneManager.LoadScene("EndGameSceneLose");
     }
 
     [Command]
     public void CmdDed()
     {
+        Camera.main.transform.DetachChildren();
+        DontDestroyOnLoad(sm.gameObject);
         RpcDed();
         SceneManager.LoadScene("EndGameSceneLose");
     }
