@@ -395,7 +395,7 @@ public class STL_PlayerController : NetworkBehaviour
     [Command]
     public void CmdFireTurret(GameObject turret, Vector3 spawnPos, float speed)
     {
-        GameObject spawnedBullet = Instantiate(Resources.Load("Bullet", typeof (GameObject)), spawnPos + ship_rb.velocity, turret.transform.rotation) as GameObject;
+        GameObject spawnedBullet = Instantiate(Resources.Load("Bullet", typeof (GameObject)), spawnPos, turret.transform.rotation) as GameObject;
         //spawnedBullet.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
         spawnedBullet.GetComponent<Rigidbody>().velocity = -spawnedBullet.transform.forward * speed + ship_rb.velocity;
         if(isServer)
