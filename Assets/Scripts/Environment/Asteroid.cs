@@ -17,11 +17,7 @@ public class Asteroid : NetworkBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bounds" || collision.gameObject.tag == "Planet")
-        {
-            
-        }
-        else if (collision.gameObject.tag == "Ship")
+        if (collision.gameObject.tag == "Ship")
         {
             Debug.Log("Ship HIT");
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
@@ -34,16 +30,21 @@ public class Asteroid : NetworkBehaviour
                     p.GetComponent<STL_PlayerController>().ShipHealth -= 12.5f;
                 }
             }
+            if (Mathf.Abs((sm.transform.position - this.gameObject.transform.position).magnitude) > sm.SoundThreshold)
+            {
+                sm.Play_Event(clip_type.AsteroidExplosion, sm.transform.position);
+            }
+            Destruction();
         }
-        if (collision.gameObject.tag != "MiniAsteroid")
+        else if (collision.gameObject.tag != "MiniAsteroid")
         {
+            sm.Play_Event(clip_type.AsteroidExplosion, this.gameObject.transform.position);
             Destruction();
         }
     }
 
     void Destruction()
     {
-        sm.Play_Event(clip_type.AsteroidExplosion);
         for (int i = 0; i < numMini; i++)
         {
             GameObject explode = Instantiate(Resources.Load("Explosion", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject;
@@ -56,7 +57,7 @@ public class Asteroid : NetworkBehaviour
     {
         if (collision.gameObject.tag == "Shield")
         {
-            sm.Play_Event(clip_type.ShieldExplosion);
+            sm.Play_Event(clip_type.ShieldExplosion, this.gameObject.transform.position);
             Destruction();
         }
     }

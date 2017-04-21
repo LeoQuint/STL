@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
+
+
 
 //These are the enums that you can use to split up the clips
 public enum clip_type
@@ -25,6 +28,20 @@ public struct Audio_Entry
 public class SoundManager : Singleton<SoundManager>
 {
 
+    public float SoundThreshold;
+
+    void Start()
+    {
+        SoundThreshold = 300f;
+        this.gameObject.transform.localPosition = Vector3.zero;
+        SceneManager.activeSceneChanged += AddToCamera;
+    }
+
+    public void AddToCamera(Scene previousScene, Scene newScene)
+    {
+        this.gameObject.transform.SetParent(Camera.main.transform);
+    }
+
     public List<AudioSource> audio_sources = new List<AudioSource>();
 
     //The music player should have a private source so there is always one available
@@ -46,20 +63,24 @@ public class SoundManager : Singleton<SoundManager>
         music_player.Play();
     }
 
-    public void PlayClip(string clip)
+    public void PlayClip(string clip, Vector3 location)
     {
-        AudioSource tempSource = Get_Free_Source();
         for (int i = 0; i < audio_clips.Count; i++)
         {
             if (clip == audio_clips[i].name)
             {
-               tempSource.clip = audio_clips[i].clip;
-               tempSource.Play();
+                if (Mathf.Abs((location - this.gameObject.transform.position).magnitude) <= SoundThreshold)
+                {
+                    AudioSource tempSource = Get_Free_Source();
+                    tempSource.clip = audio_clips[i].clip;
+                    tempSource.Play(); 
+                }
+                //AudioSource.PlayClipAtPoint(audio_clips[i].clip, location);
             }
         }
     }
 
-    public void Play_Event(clip_type genre)
+    public void Play_Event(clip_type genre, Vector3 location)
     {
         List<AudioClip> genre_clips = new List<AudioClip>();
         for (int i = 0; i < audio_clips.Count; i++)
@@ -70,9 +91,13 @@ public class SoundManager : Singleton<SoundManager>
             }
         }
         int index = UnityEngine.Random.Range(0, genre_clips.Count);
-        AudioSource temp_source = Get_Free_Source();
-        temp_source.clip = genre_clips[index];
-        temp_source.Play();
+        if(Mathf.Abs((location - this.gameObject.transform.position).magnitude) <= SoundThreshold)
+        {
+            AudioSource temp_source = Get_Free_Source();
+            temp_source.clip = genre_clips[index];
+            temp_source.Play();
+        }
+        //AudioSource.PlayClipAtPoint(genre_clips[index], location);
     }
 
     //Call this bad boy whenever we're looking for an audiosource to play something
@@ -86,7 +111,9 @@ public class SoundManager : Singleton<SoundManager>
             }
         }
         AudioSource go = gameObject.AddComponent<AudioSource>();
-        go.maxDistance = 27;
+        /*go.maxDistance = SoundThreshold;
+        go.spatialBlend = 1;
+        go.rolloffMode = AudioRolloffMode.Linear;*/
         audio_sources.Add(go);
         return go;
     }

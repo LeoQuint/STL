@@ -145,7 +145,7 @@ public class Ship_Turret : Ship_System {
     {
         if(m_input.Attack)
         {
-            sm.Play_Event(clip_type.ShipShot);
+            sm.Play_Event(clip_type.ShipShot, m_Turret.transform.position);
             m_PlayerController.CmdFireTurret(m_Turret, m_TurretMuzzle.transform.position, m_bulletSpeed);
         }
     }
