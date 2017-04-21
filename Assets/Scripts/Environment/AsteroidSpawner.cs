@@ -27,15 +27,15 @@ public class AsteroidSpawner : NetworkBehaviour {
 
     [SerializeField]
     [SyncVar]
-    float spawnRate;
+    float spawnRate = 0.75f;
 
     [SerializeField]
     [SyncVar]
-    float spawnRadius;
+    float spawnRadius = 30f;
 
     [SerializeField]
     [SyncVar]
-    float targetRadius;
+    float targetRadius = 1f;
 
     [SerializeField]
     [SyncVar]
@@ -44,6 +44,10 @@ public class AsteroidSpawner : NetworkBehaviour {
     [SerializeField]
     [SyncVar]
     GameObject shipLevel;
+
+    [SerializeField]
+    [SyncVar]
+    float speedFactor = 0.8f;
 
     [SyncVar]
     float now = 10f;
@@ -80,7 +84,7 @@ public class AsteroidSpawner : NetworkBehaviour {
             spawnRotation = Quaternion.identity;
             now = Time.time + spawnRate;
             GameObject spawnedAsteroid = Instantiate(Resources.Load("Asteroid", typeof(GameObject)), spawnLocation, spawnRotation, shipLevel.transform) as GameObject;
-            spawnedAsteroid.GetComponent<Rigidbody>().AddForce((ship.transform.position + new Vector3(targetRadius * Mathf.Cos(Random.value * 2 * Mathf.PI), 0, targetRadius * Mathf.Sin(Random.value * 2 * Mathf.PI))) - spawnedAsteroid.transform.position, ForceMode.Impulse);
+            spawnedAsteroid.GetComponent<Rigidbody>().AddForce(ship.GetComponent<Rigidbody>().velocity + ((ship.transform.position + new Vector3(targetRadius * Mathf.Cos(Random.value * 2 * Mathf.PI), 0, targetRadius * Mathf.Sin(Random.value * 2 * Mathf.PI))) - spawnedAsteroid.transform.position) * speedFactor, ForceMode.Impulse);
             
             NetworkServer.Spawn(spawnedAsteroid);
             
