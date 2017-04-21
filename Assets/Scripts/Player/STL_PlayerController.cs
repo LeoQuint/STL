@@ -302,6 +302,19 @@ public class STL_PlayerController : NetworkBehaviour
     }
 
     [ClientRpc]
+    void RpcWin()
+    {
+        SceneManager.LoadScene("EndGameScene");
+    }
+
+    [Command]
+    public void CmdWin()
+    {
+        RpcWin();
+        SceneManager.LoadScene("EndGameScene");
+    }
+
+    [ClientRpc]
     void RpcDed()
     {
         SceneManager.LoadScene("EndGameSceneLose");
